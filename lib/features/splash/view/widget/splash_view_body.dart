@@ -1,3 +1,4 @@
+import 'package:deskly_app/features/splash/view/widget/deskly_logo.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatelessWidget {
@@ -5,6 +6,9 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(children: []);
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [DesklyLogo(), SizedBox(height: 28)],
+    );
   }
 }
