@@ -1,3 +1,4 @@
+import 'package:deskly_app/features/splash/view/widget/blob_background.dart';
 import 'package:deskly_app/features/splash/view/widget/splash_view_body.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,11 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SplashViewBody());
+    return BlobBackground(
+      child: const Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SplashViewBody(),
+      ),
+    );
   }
 }
