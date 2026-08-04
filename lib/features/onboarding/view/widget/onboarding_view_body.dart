@@ -1,3 +1,4 @@
+import 'package:deskly_app/features/onboarding/view/widget/onboarding_hero_card.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingViewBody extends StatelessWidget {
@@ -5,6 +6,11 @@ class OnboardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: []);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        children: [AspectRatio(aspectRatio: 1, child: OnboardingHeroCard())],
+      ),
+    );
   }
 }
