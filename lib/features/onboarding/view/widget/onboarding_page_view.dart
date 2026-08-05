@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'onboarding_page_content.dart';
 
 class OnboardingPageView extends StatelessWidget {
-  const OnboardingPageView({super.key});
+  const OnboardingPageView({super.key, required this._pageController});
+  final PageController _pageController;
   final List<OnboardingModel> onboardingItems = const [
     OnboardingModel(
       image: AppImages.workspaceIllustration,
@@ -32,6 +33,7 @@ class OnboardingPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      controller: _pageController,
       scrollDirection: Axis.horizontal,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 3,

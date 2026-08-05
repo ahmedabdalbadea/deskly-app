@@ -11,7 +11,7 @@ class PageIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: kAnimationDuration,
-      width: isActive ? 20 : 10,
+      width: isActive ? 22 : 10,
       height: 10,
       decoration: BoxDecoration(
         color: !isActive ? const Color(0xffE0E0F0) : null,
