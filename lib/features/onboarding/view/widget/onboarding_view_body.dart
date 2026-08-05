@@ -1,8 +1,9 @@
-import 'package:deskly_app/core/theme/app_text_styles.dart';
+import 'package:deskly_app/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'onboarding_navigation.dart' show OnboardingNavigation;
+import 'onboarding_navigation.dart';
 import 'onboarding_page_view.dart';
+import 'skip_button.dart';
 
 class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});
@@ -34,22 +35,16 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
-          if (currentPage < 2)
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color(0xffF0EEFF),
-                ),
-                onPressed: () {},
-                child: Text(
-                  "Skip",
-                  style: AppTextStyles.semiBold13(
-                    context,
-                  ).copyWith(color: const Color(0xff6C47FF)),
-                ),
-              ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: AnimatedSwitcher(
+              duration: kAnimationDuration,
+              transitionBuilder: (child, animation) {
+                return FadeTransition(opacity: animation, child: child);
+              },
+              child: currentPage < 2 ? SkipButton() : const SizedBox.shrink(),
             ),
+          ),
 
           const SizedBox(height: 16),
 
