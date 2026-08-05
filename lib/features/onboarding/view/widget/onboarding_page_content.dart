@@ -9,6 +9,7 @@ class OnboardingPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AspectRatio(aspectRatio: 1, child: OnboardingHeroCard()),
         const SizedBox(height: 36),
