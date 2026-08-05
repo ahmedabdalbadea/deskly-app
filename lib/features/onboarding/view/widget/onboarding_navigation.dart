@@ -23,29 +23,42 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
       children: [
         PageIndicatorsList(activePage: pageIndex),
         Spacer(),
-        pageIndex != 2
-            ? GradientIconButton(
-                icon: Icons.arrow_forward_ios_outlined,
-                padding: 20,
-                radius: 50,
-                onPressed: () {
-                  setState(() {
-                    widget._pageController.nextPage(
-                      duration: kAnimationDuration,
-                      curve: Curves.easeInOut,
-                    );
-                  });
-                },
-              )
-            : GradientIconTextButton(
-                title: "Get Started",
-                icon: Icons.arrow_right_alt,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 26,
-                  vertical: 14,
+
+        AnimatedSwitcher(
+          duration: kAnimationDuration,
+          transitionBuilder: (child, animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: ScaleTransition(scale: animation, child: child),
+            );
+          },
+
+          child: pageIndex != 2
+              ? GradientIconButton(
+                  key: const ValueKey('next_button'),
+                  icon: Icons.arrow_forward_ios_outlined,
+                  padding: 20,
+                  radius: 50,
+                  onPressed: () {
+                    setState(() {
+                      widget._pageController.nextPage(
+                        duration: kAnimationDuration,
+                        curve: Curves.easeInOut,
+                      );
+                    });
+                  },
+                )
+              : GradientIconTextButton(
+                  key: const ValueKey('get_started_button'),
+                  title: "Get Started",
+                  icon: Icons.arrow_right_alt,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 26,
+                    vertical: 14,
+                  ),
+                  radius: 18,
                 ),
-                radius: 18,
-              ),
+        ),
       ],
     );
   }
