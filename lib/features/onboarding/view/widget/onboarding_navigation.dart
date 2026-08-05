@@ -5,20 +5,16 @@ import 'gradient_icon_button.dart';
 import 'gradient_icon_text_button.dart';
 import 'page_indicators_list.dart';
 
-class OnboardingNavigation extends StatefulWidget {
-  const OnboardingNavigation({super.key, required this._pageController});
-  final PageController _pageController;
-
-  @override
-  State<OnboardingNavigation> createState() => _OnboardingNavigationState();
-}
-
-class _OnboardingNavigationState extends State<OnboardingNavigation> {
+class OnboardingNavigation extends StatelessWidget {
+  const OnboardingNavigation({
+    super.key,
+    required this.pageController,
+    required this.pageIndex,
+  });
+  final PageController pageController;
+  final int pageIndex;
   @override
   Widget build(BuildContext context) {
-    int pageIndex = widget._pageController.page == null
-        ? 0
-        : widget._pageController.page!.round() + 1;
     return Row(
       children: [
         PageIndicatorsList(activePage: pageIndex),
@@ -32,7 +28,6 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
               child: ScaleTransition(scale: animation, child: child),
             );
           },
-
           child: pageIndex != 2
               ? GradientIconButton(
                   key: const ValueKey('next_button'),
@@ -40,12 +35,10 @@ class _OnboardingNavigationState extends State<OnboardingNavigation> {
                   padding: 20,
                   radius: 50,
                   onPressed: () {
-                    setState(() {
-                      widget._pageController.nextPage(
-                        duration: kAnimationDuration,
-                        curve: Curves.easeInOut,
-                      );
-                    });
+                    pageController.nextPage(
+                      duration: kAnimationDuration,
+                      curve: Curves.easeInOut,
+                    );
                   },
                 )
               : GradientIconTextButton(
