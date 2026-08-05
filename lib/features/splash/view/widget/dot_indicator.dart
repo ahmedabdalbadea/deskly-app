@@ -1,3 +1,4 @@
+import 'package:deskly_app/constants.dart';
 import 'package:deskly_app/core/theme/app_gradients.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class DotIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 350),
+      duration: kAnimationDuration,
       width: 10,
       height: 10,
       decoration: BoxDecoration(
