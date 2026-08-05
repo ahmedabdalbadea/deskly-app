@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'gradient_icon_button.dart';
-import 'onboarding_page_content.dart';
+import 'onboarding_page_view.dart';
 import 'page_indicators_list.dart';
 
 class OnboardingViewBody extends StatelessWidget {
@@ -13,9 +13,7 @@ class OnboardingViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
-          OnboardingPageContent(),
-
-          const Spacer(),
+          Expanded(child: OnboardingPageView()),
 
           Row(
             children: [

@@ -1,15 +1,18 @@
-import 'package:deskly_app/core/theme/app_gradients.dart';
-import 'package:deskly_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingHeroCard extends StatelessWidget {
-  const OnboardingHeroCard({super.key});
-
+  const OnboardingHeroCard({
+    super.key,
+    required this.image,
+    required this.gradient,
+  });
+  final String image;
+  final Gradient gradient;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: AppGradients.primary,
+        gradient: gradient,
         borderRadius: BorderRadius.circular(28),
       ),
       child: Stack(
@@ -25,7 +28,7 @@ class OnboardingHeroCard extends StatelessWidget {
             bottom: -40,
             child: CircleAvatar(backgroundColor: Colors.white12, radius: 80),
           ),
-          Image.asset(AppImages.workspaceIllustration, fit: BoxFit.fill),
+          Image.asset(image, fit: BoxFit.fill),
         ],
       ),
     );
