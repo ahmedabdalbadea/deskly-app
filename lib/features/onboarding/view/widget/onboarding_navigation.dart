@@ -2,6 +2,7 @@ import 'package:deskly_app/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'gradient_icon_button.dart';
+import 'gradient_icon_text_button.dart';
 import 'page_indicators_list.dart';
 
 class OnboardingNavigation extends StatefulWidget {
@@ -15,27 +16,36 @@ class OnboardingNavigation extends StatefulWidget {
 class _OnboardingNavigationState extends State<OnboardingNavigation> {
   @override
   Widget build(BuildContext context) {
+    int pageIndex = widget._pageController.page == null
+        ? 0
+        : widget._pageController.page!.round() + 1;
     return Row(
       children: [
-        PageIndicatorsList(
-          activePage: widget._pageController.page == null
-              ? 0
-              : widget._pageController.page!.round() + 1,
-        ),
+        PageIndicatorsList(activePage: pageIndex),
         Spacer(),
-        GradientIconButton(
-          icon: Icons.arrow_forward_ios_outlined,
-          padding: 20,
-          radius: 50,
-          onPressed: () {
-            setState(() {
-              widget._pageController.nextPage(
-                duration: kAnimationDuration,
-                curve: Curves.easeInOut,
-              );
-            });
-          },
-        ),
+        pageIndex != 2
+            ? GradientIconButton(
+                icon: Icons.arrow_forward_ios_outlined,
+                padding: 20,
+                radius: 50,
+                onPressed: () {
+                  setState(() {
+                    widget._pageController.nextPage(
+                      duration: kAnimationDuration,
+                      curve: Curves.easeInOut,
+                    );
+                  });
+                },
+              )
+            : GradientIconTextButton(
+                title: "Get Started",
+                icon: Icons.arrow_right_alt,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 26,
+                  vertical: 14,
+                ),
+                radius: 18,
+              ),
       ],
     );
   }
