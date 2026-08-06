@@ -1,5 +1,7 @@
 import 'package:deskly_app/constants.dart';
+import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'onboarding_navigation.dart';
 import 'onboarding_page_view.dart';
@@ -42,7 +44,13 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
               transitionBuilder: (child, animation) {
                 return FadeTransition(opacity: animation, child: child);
               },
-              child: currentPage < 2 ? SkipButton() : const SizedBox.shrink(),
+              child: currentPage < 2
+                  ? SkipButton(
+                      onPressed: () {
+                        context.go(AppRouter.kLoginView);
+                      },
+                    )
+                  : const SizedBox.shrink(),
             ),
           ),
 
