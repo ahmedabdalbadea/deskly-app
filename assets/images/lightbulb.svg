@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+  <defs>
+    <!-- Bulb Body Radial Gradient -->
+    <radialGradient id="bulbGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFEE75" />
+      <stop offset="60%" stop-color="#FFC324" />
+      <stop offset="100%" stop-color="#FF9800" />
+    </radialGradient>
+    
+    <!-- Base Purple Gradient -->
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7B61A4" />
+      <stop offset="50%" stop-color="#9980C4" />
+      <stop offset="100%" stop-color="#553C7B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Bulb Body -->
+  <path d="M 12 2.5 C 8.4 2.5 5.5 5.4 5.5 9 C 5.5 11.4 6.8 13.5 8.7 14.6 C 9.2 14.9 9.5 15.4 9.5 16 L 14.5 16 C 14.5 15.4 14.8 14.9 15.3 14.6 C 17.2 13.5 18.5 11.4 18.5 9 C 18.5 5.4 15.6 2.5 12 2.5 Z" fill="url(#bulbGrad)" />
+
+  <!-- Inner Filament Arch -->
+  <path d="M 9.5 11.5 C 9.5 9 14.5 9 14.5 11.5" fill="none" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" />
+
+  <!-- Top Right Glass Highlight -->
+  <path d="M 14.2 4.8 A 4.5 4.5 0 0 1 16.5 8" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7" />
+
+  <!-- Screw Base Rings -->
+  <rect x="8.5" y="16.5" width="7" height="2" rx="1" fill="url(#baseGrad)" />
+  <rect x="9" y="19" width="6" height="2" rx="1" fill="url(#baseGrad)" />
+  
+  <!-- Base Contact Tip -->
+  <path d="M 10.5 21.2 C 10.5 22.2 13.5 22.2 13.5 21.2 Z" fill="#442468" />
+</svg>
