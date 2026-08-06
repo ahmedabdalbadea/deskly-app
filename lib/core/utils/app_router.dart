@@ -1,5 +1,6 @@
 import 'package:deskly_app/features/onboarding/view/onboarding_view.dart';
 import 'package:deskly_app/features/splash/view/splash_view.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -15,8 +16,14 @@ abstract class AppRouter {
 
       GoRoute(
         path: kOnboardingView,
-        builder: (context, state) {
-          return const OnboardingView();
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const OnboardingView(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+          );
         },
       ),
     ],
