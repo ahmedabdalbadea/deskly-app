@@ -39,7 +39,7 @@ class _UserInputState extends State<UserInput> {
         hintText: widget.hint,
         hintStyle: AppTextStyles.regular14(
           context,
-        ).copyWith(color: const Color(0xff9090B0)),
+        ).copyWith(color: AppColors.mutedText),
         prefixIcon: Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 8),
           child: SvgPicture.asset(widget.prefixIcon),
