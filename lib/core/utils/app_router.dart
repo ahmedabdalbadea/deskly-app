@@ -42,8 +42,28 @@ abstract class AppRouter {
 
       GoRoute(
         path: kForgotPasswordView,
-        builder: (context, state) {
-          return const ForgotPasswordView();
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const ForgotPasswordView(),
+            transitionDuration: kTransitionDuration,
+            reverseTransitionDuration: kTransitionDuration,
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return SlideTransition(
+                    position:
+                        Tween<Offset>(
+                          begin: const Offset(1, 0),
+                          end: Offset.zero,
+                        ).animate(
+                          CurvedAnimation(
+                            parent: animation,
+                            curve: Curves.ease,
+                          ),
+                        ),
+                    child: child,
+                  );
+                },
+          );
         },
       ),
     ],
