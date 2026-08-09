@@ -1,9 +1,9 @@
-import 'package:deskly_app/constants.dart';
 import 'package:deskly_app/core/theme/app_gradients.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
+import 'package:deskly_app/core/widget/pressable.dart';
 import 'package:flutter/material.dart';
 
-class GradientIconTextButton extends StatefulWidget {
+class GradientIconTextButton extends StatelessWidget {
   const GradientIconTextButton({
     super.key,
     required this.title,
@@ -19,45 +19,28 @@ class GradientIconTextButton extends StatefulWidget {
   final VoidCallback? onPressed;
 
   @override
-  State<GradientIconTextButton> createState() => _GradientIconTextButtonState();
-}
-
-class _GradientIconTextButtonState extends State<GradientIconTextButton> {
-  bool _pressed = false;
-  @override
   Widget build(BuildContext context) {
-    return AnimatedScale(
-      duration: kPressAnimationDuration,
-      scale: _pressed ? 0.95 : 1,
-      child: AnimatedOpacity(
-        duration: kPressAnimationDuration,
-        opacity: _pressed ? 0.9 : 1,
-        child: InkWell(
-          onTapDown: (_) => setState(() => _pressed = true),
-          onTapUp: (_) => setState(() => _pressed = false),
-          onTapCancel: () => setState(() => _pressed = false),
-          onTap: widget.onPressed,
-          borderRadius: BorderRadius.circular(widget.radius),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: AppGradients.primary,
-              borderRadius: BorderRadius.circular(widget.radius),
+    return Pressable(
+      radius: radius,
+      onPressed: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: AppGradients.primary,
+          borderRadius: BorderRadius.circular(radius),
+        ),
+        padding: padding,
+        child: Row(
+          children: [
+            Text(
+              title,
+              style: AppTextStyles.bold15(
+                context,
+              ).copyWith(color: Colors.white),
             ),
-            padding: widget.padding,
-            child: Row(
-              children: [
-                Text(
-                  widget.title,
-                  style: AppTextStyles.bold15(
-                    context,
-                  ).copyWith(color: Colors.white),
-                ),
 
-                const SizedBox(width: 4),
-                Icon(widget.icon, color: Colors.white, size: 21),
-              ],
-            ),
-          ),
+            const SizedBox(width: 4),
+            Icon(icon, color: Colors.white, size: 21),
+          ],
         ),
       ),
     );
