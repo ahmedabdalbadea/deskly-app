@@ -1,4 +1,6 @@
+import 'package:deskly_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import 'login_form.dart';
 import 'login_navigation.dart';
@@ -17,7 +19,15 @@ class LoginContent extends StatelessWidget {
           children: [
             const SizedBox(height: 28),
 
-            LoginForm(),
+            LoginForm()
+                .animate(delay: 600.ms)
+                .fadeIn(duration: kAnimationDuration)
+                .slideY(
+                  begin: 0.15,
+                  end: 0,
+                  duration: kAnimationDuration,
+                  curve: Curves.easeOut,
+                ),
 
             const SizedBox(height: 24),
 
@@ -25,7 +35,10 @@ class LoginContent extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            SocialAuthList(),
+            SocialAuthList()
+                .animate(delay: 800.ms)
+                .fadeIn(duration: kAnimationDuration)
+                .slideY(begin: 0.1, end: 0, duration: kAnimationDuration),
 
             const SizedBox(height: 24),
 
