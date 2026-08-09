@@ -9,7 +9,7 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 46, bottom: 28),
+      padding: const EdgeInsets.only(top: 16, bottom: 28),
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: AppGradients.primary,
@@ -19,22 +19,29 @@ class LoginHeader extends StatelessWidget {
         ),
       ),
 
-      child: Column(
-        children: [
-          DesklyLogo(size: 60, radius: 18, backgroundColor: Colors.white30),
-          const SizedBox(height: 12),
-          Text(
-            "Welcome Back",
-            style: AppTextStyles.bold22(context).copyWith(color: Colors.white),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            "Sign in to your account",
-            style: AppTextStyles.regular13(
-              context,
-            ).copyWith(color: Colors.white),
-          ),
-        ],
+      child: SafeArea(
+        bottom: false,
+        left: false,
+        right: false,
+        child: Column(
+          children: [
+            DesklyLogo(size: 60, radius: 18, backgroundColor: Colors.white30),
+            const SizedBox(height: 12),
+            Text(
+              "Welcome Back",
+              style: AppTextStyles.bold22(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              "Sign in to your account",
+              style: AppTextStyles.regular13(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
