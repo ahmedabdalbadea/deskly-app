@@ -1,4 +1,5 @@
 import 'package:deskly_app/constants.dart';
+import 'package:deskly_app/features/auth/view/forgot_password_view.dart';
 import 'package:deskly_app/features/auth/view/login_view.dart';
 import 'package:deskly_app/features/onboarding/view/onboarding_view.dart';
 import 'package:deskly_app/features/splash/view/splash_view.dart';
@@ -8,6 +9,7 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter {
   static const kOnboardingView = "/onboarding_view";
   static const kLoginView = "/login_view";
+  static const kForgotPasswordView = "/forgot_password_view";
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -35,6 +37,13 @@ abstract class AppRouter {
         path: kLoginView,
         builder: (context, state) {
           return const LoginView();
+        },
+      ),
+
+      GoRoute(
+        path: kForgotPasswordView,
+        builder: (context, state) {
+          return const ForgotPasswordView();
         },
       ),
     ],
