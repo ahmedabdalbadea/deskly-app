@@ -10,7 +10,7 @@ class SkipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        backgroundColor: const Color(0xffF0EEFF),
+        backgroundColor: AppColors.surface,
         animationDuration: kPressAnimationDuration,
       ),
       onPressed: onPressed,
