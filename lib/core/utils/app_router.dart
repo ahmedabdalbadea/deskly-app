@@ -45,36 +45,33 @@ abstract class AppRouter {
       GoRoute(
         path: kForgotPasswordView,
         pageBuilder: (context, state) {
-          return CustomTransitionPage(
-            child: const ForgotPasswordView(),
-            transitionDuration: kTransitionDuration,
-            reverseTransitionDuration: kTransitionDuration,
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-                  return SlideTransition(
-                    position:
-                        Tween<Offset>(
-                          begin: const Offset(1, 0),
-                          end: Offset.zero,
-                        ).animate(
-                          CurvedAnimation(
-                            parent: animation,
-                            curve: Curves.ease,
-                          ),
-                        ),
-                    child: child,
-                  );
-                },
-          );
+          return customSlideTransition(child: const ForgotPasswordView());
         },
       ),
 
       GoRoute(
         path: kRegisterView,
-        builder: (context, state) {
-          return const RegisterView();
+        pageBuilder: (context, state) {
+          return customSlideTransition(child: const RegisterView());
         },
       ),
     ],
+  );
+
+  static CustomTransitionPage<dynamic> customSlideTransition({
+    required Widget child,
+  }) => CustomTransitionPage(
+    child: child,
+    transitionDuration: kTransitionDuration,
+    reverseTransitionDuration: kTransitionDuration,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(1, 0),
+          end: Offset.zero,
+        ).animate(CurvedAnimation(parent: animation, curve: Curves.ease)),
+        child: child,
+      );
+    },
   );
 }
