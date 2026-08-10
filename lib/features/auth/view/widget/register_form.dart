@@ -1,18 +1,29 @@
-import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
 import 'package:deskly_app/core/utils/app_images.dart';
-import 'package:deskly_app/features/auth/view/widget/gradient_button.dart';
-import 'package:deskly_app/features/auth/view/widget/gradient_check_box.dart';
+import 'package:deskly_app/core/utils/form_validators.dart';
 import 'package:flutter/material.dart';
 
+import 'gradient_button.dart';
+import 'terms_and_policy.dart';
 import 'user_input.dart';
 
-class RegisterForm extends StatelessWidget {
+class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
 
   @override
+  State<RegisterForm> createState() => _RegisterFormState();
+}
+
+class _RegisterFormState extends State<RegisterForm> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
+  String? _password;
+  bool _acceptedTerms = false, _acceptedTermsValidated = true;
+  @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
+      autovalidateMode: _autovalidateMode,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -22,6 +33,7 @@ class RegisterForm extends StatelessWidget {
             child: UserInput(
               prefixIcon: AppImages.personIcon,
               hint: "Ahmed Mohamed",
+              validator: FormValidators.requiredFieldValidator,
             ),
           ),
 
@@ -33,6 +45,7 @@ class RegisterForm extends StatelessWidget {
             child: UserInput(
               prefixIcon: AppImages.emailIcon,
               hint: "ahmed@example.com",
+              validator: FormValidators.validateEmail,
             ),
           ),
 
@@ -44,6 +57,7 @@ class RegisterForm extends StatelessWidget {
             child: UserInput(
               prefixIcon: AppImages.phoneIcon,
               hint: "+20 10 1234 5678",
+              validator: FormValidators.validateInternationalPhone,
             ),
           ),
 
@@ -56,6 +70,10 @@ class RegisterForm extends StatelessWidget {
               prefixIcon: AppImages.lockIcon,
               hint: "• • • • • • • •",
               isPassword: true,
+              validator: FormValidators.validatePassword,
+              onChanged: (value) {
+                _password = value;
+              },
             ),
           ),
 
@@ -68,33 +86,22 @@ class RegisterForm extends StatelessWidget {
               prefixIcon: AppImages.lockIcon,
               hint: "• • • • • • • •",
               isPassword: true,
+              validator: (value) =>
+                  FormValidators.confirmPasswordValidator(value, _password),
             ),
           ),
 
           const SizedBox(height: 18),
 
-          Row(
-            children: [
-              GradientCheckBox(),
-              const SizedBox(width: 8),
-              Text("I agree to ", style: AppTextStyles.regular12(context)),
-
-              Text(
-                "the Terms of Service",
-                style: AppTextStyles.regular12(
-                  context,
-                ).copyWith(color: AppColors.primaryPurple),
-              ),
-
-              Text(" and ", style: AppTextStyles.regular12(context)),
-
-              Text(
-                "Privacy Policy",
-                style: AppTextStyles.regular12(
-                  context,
-                ).copyWith(color: AppColors.primaryPurple),
-              ),
-            ],
+          TermsAndPolicy(
+            acceptedTerms: _acceptedTerms,
+            validated: _acceptedTermsValidated,
+            onChanged: (value) {
+              setState(() {
+                _acceptedTerms = value;
+                _acceptedTermsValidated = true;
+              });
+            },
           ),
 
           const SizedBox(height: 18),
@@ -103,6 +110,17 @@ class RegisterForm extends StatelessWidget {
             title: "Create Account",
             radius: 16,
             padding: EdgeInsets.symmetric(vertical: 16),
+            onPressed: () {
+              if (_formKey.currentState!.validate() &&
+                  _acceptedTermsValidated) {
+                _formKey.currentState!.save();
+              } else {
+                setState(() {
+                  _autovalidateMode = AutovalidateMode.always;
+                  _acceptedTermsValidated = _acceptedTerms;
+                });
+              }
+            },
           ),
         ],
       ),

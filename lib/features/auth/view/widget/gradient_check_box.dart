@@ -1,25 +1,22 @@
 import 'package:deskly_app/constants.dart';
+import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_gradients.dart';
 import 'package:flutter/material.dart';
 
-class GradientCheckBox extends StatefulWidget {
-  const GradientCheckBox({super.key});
+class GradientCheckBox extends StatelessWidget {
+  const GradientCheckBox({
+    super.key,
+    required this.value,
+    required this.onChanged,
+    this.validated = true,
+  });
+  final bool value, validated;
+  final ValueChanged<bool> onChanged;
 
-  @override
-  State<GradientCheckBox> createState() => _GradientCheckBoxState();
-}
-
-class _GradientCheckBoxState extends State<GradientCheckBox> {
-  bool _checked = false;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        setState(() {
-          _checked = !_checked;
-        });
-      },
-
+      onTap: () => onChanged(!value),
       child: AnimatedContainer(
         duration: kAnimationDuration,
         width: 18,
@@ -27,14 +24,16 @@ class _GradientCheckBoxState extends State<GradientCheckBox> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           border: Border.all(
-            color: _checked ? Colors.transparent : const Color(0xFF000000),
+            color: value
+                ? Colors.transparent
+                : validated
+                ? const Color(0xFF000000)
+                : AppColors.error,
           ),
-          gradient: _checked ? AppGradients.primary : null,
+          gradient: value ? AppGradients.primary : null,
         ),
 
-        child: _checked
-            ? Icon(Icons.check, size: 14, color: Colors.white)
-            : null,
+        child: value ? Icon(Icons.check, size: 14, color: Colors.white) : null,
       ),
     );
   }
