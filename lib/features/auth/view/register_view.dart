@@ -15,7 +15,7 @@ class RegisterView extends StatelessWidget {
         child: Align(
           alignment: AlignmentGeometry.centerLeft,
           child: Padding(
-            padding: EdgeInsetsGeometry.only(left: 12, top: 12),
+            padding: EdgeInsetsGeometry.only(left: 12, top: 16),
             child: CustomBackButton(
               onPressed: () {
                 GoRouter.of(context).pop();
