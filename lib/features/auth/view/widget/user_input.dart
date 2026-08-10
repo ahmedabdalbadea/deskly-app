@@ -50,8 +50,8 @@ class _UserInputState extends State<UserInput> {
         border: _buildBorder(color: AppColors.border),
         enabledBorder: _buildBorder(color: AppColors.border),
         focusedBorder: _buildBorder(color: AppColors.primaryPurple),
-        errorBorder: _buildBorder(color: const Color(0xffDC2626)),
-        focusedErrorBorder: _buildBorder(color: const Color(0xffDC2626)),
+        errorBorder: _buildBorder(color: AppColors.error),
+        focusedErrorBorder: _buildBorder(color: AppColors.error),
       ),
     );
   }
