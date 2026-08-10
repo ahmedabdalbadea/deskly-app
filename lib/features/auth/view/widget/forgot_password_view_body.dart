@@ -2,14 +2,13 @@ import 'package:deskly_app/constants.dart';
 import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
 import 'package:deskly_app/core/utils/app_images.dart';
-import 'package:deskly_app/features/auth/view/widget/forgot_password_navigation.dart';
-import 'package:deskly_app/features/auth/view/widget/gradient_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'forgot_password_form.dart';
 import 'forgot_password_icon.dart';
-import 'user_input.dart';
+import 'forgot_password_navigation.dart';
 
 class ForgotPasswordViewBody extends StatelessWidget {
   const ForgotPasswordViewBody({super.key});
@@ -72,55 +71,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              Align(
-                alignment: Alignment.centerLeft,
-                child:
-                    Text(
-                          "Email Address",
-                          style: AppTextStyles.medium13(context),
-                        )
-                        .animate(delay: 400.ms)
-                        .fadeIn(duration: kAnimationDuration)
-                        .slideY(
-                          begin: -0.2,
-                          end: 0,
-                          duration: kAnimationDuration,
-                          curve: Curves.easeOut,
-                        ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.only(top: 12.0),
-                child:
-                    UserInput(
-                          prefixIcon: AppImages.emailIcon,
-                          hint: "ahmed@example.com",
-                        )
-                        .animate(delay: 440.ms)
-                        .fadeIn(duration: kAnimationDuration)
-                        .slideY(
-                          begin: -0.2,
-                          end: 0,
-                          duration: kAnimationDuration,
-                          curve: Curves.easeOut,
-                        ),
-              ),
-
-              const SizedBox(height: 16),
-
-              GradientButton(
-                    title: "Send Reset Link",
-                    radius: 16,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  )
-                  .animate(delay: 480.ms)
-                  .fadeIn(duration: kAnimationDuration)
-                  .slideY(
-                    begin: -0.2,
-                    end: 0,
-                    duration: kAnimationDuration,
-                    curve: Curves.easeOut,
-                  ),
+              ForgotPasswordForm(),
 
               const SizedBox(height: 16),
 
