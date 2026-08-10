@@ -38,6 +38,7 @@ dependencies:
   go_router: ^17.3.0
   flutter_svg: ^2.3.0
   flutter_animate: ^4.5.2
+  firebase_core: ^4.13.0
 
 dev_dependencies:
   flutter_test:
