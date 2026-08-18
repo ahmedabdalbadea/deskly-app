@@ -12,6 +12,7 @@ class UserInput extends StatefulWidget {
     this.isPassword = false,
     this.validator,
     this.onChanged,
+    this.controller,
     required this.prefixIcon,
   });
   final String hint;
@@ -19,6 +20,7 @@ class UserInput extends StatefulWidget {
   final String prefixIcon;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final TextEditingController? controller;
 
   @override
   State<UserInput> createState() => _UserInputState();
@@ -30,6 +32,7 @@ class _UserInputState extends State<UserInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       onChanged: widget.onChanged,
       validator: widget.validator,
       obscureText: widget.isPassword ? _hidePassword : false,
