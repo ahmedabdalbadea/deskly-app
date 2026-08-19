@@ -1,7 +1,7 @@
 import 'package:deskly_app/core/theme/app_gradients.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
 import 'package:deskly_app/core/utils/app_router.dart';
-import 'package:deskly_app/features/splash/view/widget/deskly_logo.dart';
+import 'package:deskly_app/core/widget/deskly_logo.dart';
 import 'package:deskly_app/features/splash/view/widget/dot_indicators_list.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

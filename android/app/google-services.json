@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "253628741321",
+    "project_id": "deskly-app-98b01",
+    "storage_bucket": "deskly-app-98b01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253628741321:android:1d9b154f36d607f489ff18",
+        "android_client_info": {
+          "package_name": "com.example.deskly_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253628741321-blvlil8abbk6gjemjs5jqlvck45es1gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGy3ByZo9UvSl7aslV8fCvT5x7ynRC29k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253628741321-blvlil8abbk6gjemjs5jqlvck45es1gr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "253628741321-c8ubnk5l6623iupc2hp3f2q0j6rbppba.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.desklyApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

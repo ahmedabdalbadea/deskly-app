@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">deskly_app</string>
+<string name="facebook_app_id">1591157039250044</string>
+    <string name="fb_login_protocol_scheme">fb1591157039250044</string>
+    <string name="facebook_client_token">536b27a0ef03e7a48d5b9af069005e5a</string>
+</resources>

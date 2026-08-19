@@ -3,13 +3,14 @@ import 'package:deskly_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
 class DesklyLogo extends StatelessWidget {
-  const DesklyLogo({super.key});
-
+  const DesklyLogo({super.key, this.size, this.backgroundColor, this.radius});
+  final double? size, radius;
+  final Color? backgroundColor;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
-      height: 120,
+      width: size ?? 120,
+      height: size ?? 120,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -19,8 +20,8 @@ class DesklyLogo extends StatelessWidget {
             spreadRadius: 0,
           ),
         ],
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(32),
+        color: backgroundColor ?? Colors.white,
+        borderRadius: BorderRadius.circular(radius ?? 32),
       ),
       child: Image.asset(AppImages.desklyLogo),
     );

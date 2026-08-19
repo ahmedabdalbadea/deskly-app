@@ -1,5 +1,7 @@
 import 'package:deskly_app/constants.dart';
+import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'gradient_icon_button.dart';
 import 'gradient_icon_text_button.dart';
@@ -42,6 +44,9 @@ class OnboardingNavigation extends StatelessWidget {
                   },
                 )
               : GradientIconTextButton(
+                  onPressed: () {
+                    context.go(AppRouter.kLoginView);
+                  },
                   key: const ValueKey('get_started_button'),
                   title: "Get Started",
                   icon: Icons.arrow_right_alt,
