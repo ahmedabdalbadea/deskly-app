@@ -2,6 +2,7 @@ import 'package:blurry_modal_progress_hud/blurry_modal_progress_hud.dart';
 import 'package:deskly_app/core/functions/app_snackbar.dart';
 import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
+import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:deskly_app/core/utils/service_locator.dart';
 import 'package:deskly_app/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class RegisterView extends StatelessWidget {
           }
 
           if (state is RegisterSuccess) {
-            // TODO: Navigate to home screen once home feature is implemented.
+            context.go(AppRouter.kHomeView);
           }
         },
         child: BlocBuilder<AuthCubit, AuthState>(
