@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:deskly_app/constants.dart';
-import 'package:deskly_app/features/auth/domain/errors/social_auth_cancelled_failure.dart';
 import 'package:deskly_app/features/auth/data/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -50,27 +49,16 @@ class AuthRemoteDataSource {
     return await _firebaseAuth.signInWithCredential(credential);
   }
 
-  Future<UserCredential> loginWithFacebook() async {
-    final LoginResult loginResult = await _facebookAuth.login();
+  Future<LoginResult> loginWithFacebook() async {
+    return await _facebookAuth.login(permissions: ['email']);
+  }
 
-    if (loginResult.status == LoginStatus.cancelled) {
-      throw SocialAuthCancelledFailure();
-    }
-
-    if (loginResult.status != LoginStatus.success) {
-      throw Exception(loginResult.message ?? 'Facebook login failed');
-    }
-
-    final String? token = loginResult.accessToken?.tokenString;
-
-    if (token == null) {
-      throw Exception('Facebook access token is null');
-    }
-
+  Future<UserCredential> loginWithFacebookCredential({
+    required String token,
+  }) async {
     final OAuthCredential facebookAuthCredential =
         FacebookAuthProvider.credential(token);
-
-    return _firebaseAuth.signInWithCredential(facebookAuthCredential);
+    return await _firebaseAuth.signInWithCredential(facebookAuthCredential);
   }
 
   Future<bool> userDocumentExists({required String uId}) async {

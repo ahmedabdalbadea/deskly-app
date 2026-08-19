@@ -7,6 +7,7 @@ import 'package:deskly_app/features/auth/data/model/user_model.dart';
 import 'package:deskly_app/features/auth/domain/enums/social_auth_type.dart';
 import 'package:deskly_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepoImpl implements AuthRepo {
@@ -83,8 +84,20 @@ class AuthRepoImpl implements AuthRepo {
           credential = await _authRemoteDataSource.loginWithGoogle();
           break;
         case SocialAuthType.facebook:
-          credential = await _authRemoteDataSource.loginWithFacebook();
+          final loginResult = await _authRemoteDataSource.loginWithFacebook();
 
+          final failure = _handleLoginResultStatus(loginResult);
+          if (failure != null) {
+            return left(failure);
+          }
+
+          final String? token = loginResult.accessToken?.tokenString;
+
+          if (token == null) {
+            return left(FirebaseAuthFailure('Facebook access token is null'));
+          }
+
+          credential = await _authRemoteDataSource.loginWithFacebookCredential(token: token);
           break;
         case SocialAuthType.linkedin:
           return left(
@@ -128,5 +141,17 @@ class AuthRepoImpl implements AuthRepo {
     );
 
     await _authRemoteDataSource.createUserDocument(user: userModel);
+  }
+
+  Failure? _handleLoginResultStatus(LoginResult loginResult) {
+    if (loginResult.status == LoginStatus.cancelled) {
+      return SocialAuthCancelledFailure();
+    }
+    if (loginResult.status != LoginStatus.success) {
+      return FirebaseAuthFailure(
+        loginResult.message ?? 'Facebook login failed',
+      );
+    }
+    return null;
   }
 }
