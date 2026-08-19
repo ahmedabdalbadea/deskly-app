@@ -1,8 +1,11 @@
+import 'package:deskly_app/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:deskly_app/core/utils/app_bloc_observer.dart';
 import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:deskly_app/core/utils/service_locator.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
