@@ -56,7 +56,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
                           "Don't worry! Enter your email and we'll send you a reset link.",
                           style: AppTextStyles.regular14(
                             context,
-                          ).copyWith(color: const Color(0xff8A8AAA)),
+                          ).copyWith(color: AppColors.mutedPurple),
                           textAlign: TextAlign.center,
                         )
                         .animate(delay: 300.ms)
@@ -98,7 +98,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
                         "The reset link will expire in 15 minutes. Check your spam folder if you're not seeing it.",
                         style: AppTextStyles.regular12(
                           context,
-                        ).copyWith(color: const Color(0xff8A8AAA)),
+                        ).copyWith(color: AppColors.mutedPurple),
                       ),
                     ),
                   )
