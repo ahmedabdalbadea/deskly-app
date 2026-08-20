@@ -26,7 +26,7 @@ class CategoryItem extends StatelessWidget {
       radius: 16,
       child: AnimatedContainer(
         height: 90,
-        width: 76,
+        width: MediaQuery.widthOf(context) / 5.16,
         duration: const Duration(milliseconds: 120),
         curve: Curves.easeOut,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),

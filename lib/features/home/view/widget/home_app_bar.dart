@@ -11,24 +11,22 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
-      title: SafeArea(
-        bottom: false,
-        left: false,
-        right: false,
-        child: Row(
-          children: [
-            const UserGreeting(greeting: 'Good morning,', userName: 'Ahmed'),
-            const Spacer(),
-            NotificationButton(onPressed: () {}),
-            const SizedBox(width: 10),
-            ProfileAvatar(onPressed: () {}),
-          ],
-        ),
+      surfaceTintColor: Colors.transparent,
+      backgroundColor: Colors.white,
+      title: Row(
+        children: [
+          SizedBox(height: 8),
+          const UserGreeting(greeting: 'Good morning,', userName: 'Ahmed'),
+          const Spacer(),
+          NotificationButton(onPressed: () {}),
+          const SizedBox(width: 10),
+          ProfileAvatar(onPressed: () {}),
+        ],
       ),
       bottom: const PreferredSize(
-        preferredSize: Size.fromHeight(66),
+        preferredSize: Size.fromHeight(90),
         child: Padding(
-          padding: EdgeInsetsGeometry.only(top: 16),
+          padding: EdgeInsetsGeometry.only(top: 16, bottom: 24),
           child: HomeSearchBar(),
         ),
       ),

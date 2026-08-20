@@ -12,7 +12,6 @@ class Categories extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 24),
         Text(
           'Categories',
           style: AppTextStyles.bold16(
