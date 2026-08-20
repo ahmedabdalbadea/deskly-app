@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="240" height="240" fill="none" stroke="#383633" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Top Loop -->
+  <path d="M10.3 5.2A2.2 2.2 0 0 1 12 4.5a2.2 2.2 0 0 1 1.7.7" />
+  <!-- Bell Body -->
+  <path d="M12 6.2c-3 0-5.2 2.1-5.5 5.5-.2 2.1-.8 3.8-2 4.8-.5.4-.2 1.2.5 1.2h14c.7 0 1-.8.5-1.2-1.2-1-1.8-2.7-2-4.8-.3-3.4-2.5-5.5-5.5-5.5z" />
+  <!-- Clapper -->
+  <path d="M10.2 20.2l1.2 1.2c.3.3.9.3 1.2 0l1.2-1.2" />
+</svg>

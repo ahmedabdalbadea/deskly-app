@@ -17,4 +17,8 @@ abstract class AppImages {
   static const eyeIcon = "assets/images/eye.svg";
   static const eyeOffIcon = "assets/images/eye_off.svg";
   static const lightBulbIcon = "assets/images/lightbulb.svg";
+  static const profileTest = "assets/images/profile.jpg";
+  static const bellBadgeIcon = "assets/images/bell_badge.svg";
+  static const bellNoBadgeIcon = "assets/images/bell_no_badge.svg";
+  static const filterIcon = "assets/images/fliter_icon.svg";
 }
