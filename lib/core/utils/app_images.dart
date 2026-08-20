@@ -25,4 +25,5 @@ abstract class AppImages {
   static const meetingRoomIcon = "assets/images/meeting_room.svg";
   static const privateOfficeIcon = "assets/images/private_office.svg";
   static const eventSpaceIcon = "assets/images/event_space.svg";
+  static const workspaceTest = "assets/images/workspace.jpg";
 }

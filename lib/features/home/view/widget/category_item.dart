@@ -1,4 +1,3 @@
-import 'package:deskly_app/constants.dart';
 import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_gradients.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
@@ -28,7 +27,7 @@ class CategoryItem extends StatelessWidget {
       child: AnimatedContainer(
         height: 90,
         width: 76,
-        duration: kAnimationDuration,
+        duration: const Duration(milliseconds: 120),
         curve: Curves.easeOut,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         decoration: BoxDecoration(

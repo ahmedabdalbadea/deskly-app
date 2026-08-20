@@ -9,6 +9,10 @@ abstract class AppTextStyles {
   static TextStyle regular14(BuildContext context) =>
       TextStyle(fontSize: getResponsiveText(context, fontSize: 14));
 
+      
+  static TextStyle regular16(BuildContext context) =>
+      TextStyle(fontSize: getResponsiveText(context, fontSize: 16));
+
   static TextStyle extraBold28(BuildContext context) => TextStyle(
     fontSize: getResponsiveText(context, fontSize: 28),
     fontWeight: FontWeight.w800,
@@ -60,6 +64,19 @@ abstract class AppTextStyles {
 
   static TextStyle semiBold10(BuildContext context) => TextStyle(
     fontSize: getResponsiveText(context, fontSize: 10),
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle semiBold11(BuildContext context) => TextStyle(
+    fontSize: getResponsiveText(context, fontSize: 11),
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle regular11(BuildContext context) =>
+      TextStyle(fontSize: getResponsiveText(context, fontSize: 11));
+
+  static TextStyle semiBold12(BuildContext context) => TextStyle(
+    fontSize: getResponsiveText(context, fontSize: 12),
     fontWeight: FontWeight.w600,
   );
 }
