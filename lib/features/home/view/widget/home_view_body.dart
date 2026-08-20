@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'categories.dart';
 import 'home_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,6 +14,7 @@ class HomeViewBody extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(child: SizedBox(height: 8)),
           HomeAppBar(),
+          SliverToBoxAdapter(child: Categories()),
         ],
       ),
     );
