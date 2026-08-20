@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'categories.dart';
 import 'home_app_bar.dart';
+import 'nearby_workspace.dart';
 import 'popular_workspaces.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -17,7 +18,8 @@ class HomeViewBody extends StatelessWidget {
           SliverToBoxAdapter(child: Categories()),
           SliverToBoxAdapter(child: SizedBox(height: 20)),
           SliverToBoxAdapter(child: PopularWorkspaces()),
-
+          SliverToBoxAdapter(child: SizedBox(height: 20)),
+          SliverToBoxAdapter(child: NearbyWorkspace()),
           SliverToBoxAdapter(child: SizedBox(height: 20)),
         ],
       ),
