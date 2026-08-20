@@ -31,7 +31,7 @@ class UserGreeting extends StatelessWidget {
               userName,
               style: AppTextStyles.semiBold20(
                 context,
-              ).copyWith(color: const Color(0xFF1E1E2D)),
+              ).copyWith(color: AppColors.primaryText),
             ),
             const SizedBox(width: 4),
             const Text('👋', style: TextStyle(fontSize: 18)),

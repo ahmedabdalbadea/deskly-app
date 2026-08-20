@@ -21,4 +21,8 @@ abstract class AppImages {
   static const bellBadgeIcon = "assets/images/bell_badge.svg";
   static const bellNoBadgeIcon = "assets/images/bell_no_badge.svg";
   static const filterIcon = "assets/images/fliter_icon.svg";
+  static const hotDeskIcon = "assets/images/hot_desk.svg";
+  static const meetingRoomIcon = "assets/images/meeting_room.svg";
+  static const privateOfficeIcon = "assets/images/private_office.svg";
+  static const eventSpaceIcon = "assets/images/event_space.svg";
 }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <g fill="#4C1D95">
+    <!-- Left Person -->
+    <circle cx="23" cy="22" r="7"/>
+    <path d="M12 44 C12 36 17 32 23 32 C29 32 34 36 34 44 V46 H12 Z"/>
+    <!-- Right Person -->
+    <circle cx="41" cy="22" r="7"/>
+    <path d="M30 44 C30 36 35 32 41 32 C47 32 52 36 52 44 V46 H30 Z"/>
+  </g>
+</svg>

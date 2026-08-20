@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Flag -->
+  <path d="M32 8 V14" stroke="#D97706" stroke-width="2"/>
+  <path d="M32 8 L38 11 L32 14 Z" fill="#F59E0B"/>
+  <!-- Tent Roof -->
+  <path d="M32 14 L12 32 H52 Z" fill="#EC4899"/>
+  <path d="M32 14 L22 32 H42 Z" fill="#F43F5E"/>
+  <path d="M32 14 L32 32" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Walls & Entrance -->
+  <rect x="16" y="32" width="32" height="20" fill="#F43F5E"/>
+  <path d="M26 52 C26 42 38 42 38 52 Z" fill="#881337"/>
+</svg>

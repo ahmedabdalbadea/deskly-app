@@ -43,7 +43,7 @@ class HomeSearchBar extends StatelessWidget {
         textAlignVertical: TextAlignVertical.center,
         style: AppTextStyles.regular13(
           context,
-        ).copyWith(color: const Color(0xFF1E1E2D)),
+        ).copyWith(color: AppColors.primaryText),
         decoration: InputDecoration(
           hintText: "Search workspaces, locations...",
           hintStyle: AppTextStyles.regular13(
