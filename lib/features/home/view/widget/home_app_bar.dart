@@ -1,4 +1,6 @@
+import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'home_search_bar.dart';
 import 'notification_button.dart';
@@ -32,16 +34,21 @@ class HomeAppBar extends StatelessWidget {
           ),
         ),
       ),
-      bottom: const PreferredSize(
-        preferredSize: Size.fromHeight(90),
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(90),
         child: Padding(
-          padding: EdgeInsetsGeometry.only(
+          padding: const EdgeInsetsGeometry.only(
             top: 16,
             bottom: 24,
             right: 20,
             left: 20,
           ),
-          child: HomeSearchBar(),
+          child: HomeSearchBar(
+            readOnly: true,
+            onTap: () {
+              context.push(AppRouter.kSearchView);
+            },
+          ),
         ),
       ),
     );

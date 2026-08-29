@@ -3,6 +3,7 @@ import 'package:deskly_app/features/auth/view/forgot_password_view.dart';
 import 'package:deskly_app/features/auth/view/login_view.dart';
 import 'package:deskly_app/features/auth/view/register_view.dart';
 import 'package:deskly_app/features/home/view/home_view.dart';
+import 'package:deskly_app/features/home/view/search_view.dart';
 import 'package:deskly_app/features/onboarding/view/onboarding_view.dart';
 import 'package:deskly_app/features/splash/view/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ abstract class AppRouter {
   static const kRegisterView = "/register_view";
   static const kForgotPasswordView = "/forgot_password_view";
   static const kHomeView = "/home_view";
+  static const kSearchView = "/search_view";
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -22,7 +24,6 @@ abstract class AppRouter {
           return const SplashView();
         },
       ),
-
       GoRoute(
         path: kOnboardingView,
         pageBuilder: (context, state) {
@@ -62,6 +63,13 @@ abstract class AppRouter {
         path: kHomeView,
         builder: (context, state) {
           return const HomeView();
+        },
+      ),
+
+      GoRoute(
+        path: kSearchView,
+        builder: (context, state) {
+          return const SearchView();
         },
       ),
     ],
