@@ -25,7 +25,7 @@ class CategoryItem extends StatelessWidget {
       onPressed: onPressed,
       radius: 16,
       child: AnimatedContainer(
-        height: 90,
+        height: 95,
         width: MediaQuery.widthOf(context) / 5.16,
         duration: const Duration(milliseconds: 120),
         curve: Curves.easeOut,
@@ -45,7 +45,7 @@ class CategoryItem extends StatelessWidget {
               : [],
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(icon, width: 28, height: 28),
             const SizedBox(height: 8),
