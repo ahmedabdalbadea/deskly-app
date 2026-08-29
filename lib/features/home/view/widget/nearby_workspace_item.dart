@@ -10,8 +10,7 @@ class NearbyWorkspaceItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Container(
-        width: MediaQuery.widthOf(context) / 3.6,
-        height: 195,
+        width: MediaQuery.widthOf(context) / 3.7,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [

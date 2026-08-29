@@ -7,28 +7,30 @@ class NearbyWorkspaceItemDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("The Hub Cairo", style: AppTextStyles.bold12(context)),
-          const SizedBox(height: 5),
-          Text(
-            "EGP 80/hr",
-            style: AppTextStyles.semiBold11(
-              context,
-            ).copyWith(color: AppColors.primaryPurple),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            "📍 0.3 km",
-            style: AppTextStyles.regular10(
-              context,
-            ).copyWith(color: AppColors.mutedText),
-          ),
-        ],
-      ),
-    );
+    return 
+       Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("The Hub Cairo", style: AppTextStyles.bold12(context)),
+            const SizedBox(height: 5),
+            Text(
+              "EGP 80/hr",
+              style: AppTextStyles.semiBold11(
+                context,
+              ).copyWith(color: AppColors.primaryPurple),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              "📍 0.3 km",
+              style: AppTextStyles.regular10(
+                context,
+              ).copyWith(color: AppColors.mutedText),
+            ),
+          ],
+        ),
+      );
   }
 }
