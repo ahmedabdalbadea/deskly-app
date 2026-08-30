@@ -19,7 +19,7 @@ class CustomSearchBar extends StatelessWidget {
 
         decoration: InputDecoration(
           filled: true,
-          fillColor: const Color(0xffF6F7FB),
+          fillColor: AppColors.surfaceLight,
           hintText: "Search workspaces, locations...",
           hintStyle: AppTextStyles.regular13(
             context,
