@@ -1,3 +1,4 @@
+import 'package:deskly_app/features/home/view/widget/trending.dart';
 import 'package:flutter/material.dart';
 
 import 'recent_search.dart';
@@ -11,7 +12,28 @@ class SearchViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SearchAppBar(),
-        SliverToBoxAdapter(child: RecentSearch()),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+              left: 24,
+              right: 24,
+              bottom: 16,
+            ),
+            child: RecentSearch(),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 24.0,
+              right: 24,
+              top: 8,
+              bottom: 1,
+            ),
+            child: Trending(),
+          ),
+        ),
       ],
     );
   }
