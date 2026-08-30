@@ -5,25 +5,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FilterButton extends StatelessWidget {
-  const FilterButton({super.key, this.onPressed});
+  const FilterButton({
+    super.key,
+    this.onPressed,
+    this.padding,
+    this.size,
+    this.filterIcon,
+  });
 
   final VoidCallback? onPressed;
-
+  final double? padding, size;
+  final String? filterIcon;
   @override
   Widget build(BuildContext context) {
     return Pressable(
       onPressed: onPressed,
       radius: 12,
       child: Container(
-        width: 30,
-        height: 30,
-        padding: const EdgeInsets.all(6),
+        width: size ?? 30,
+        height: size ?? 30,
+        padding: EdgeInsets.all(padding ?? 6),
         decoration: BoxDecoration(
           gradient: AppGradients.primary,
           borderRadius: BorderRadius.circular(12),
         ),
         child: SvgPicture.asset(
-          AppImages.filterIcon,
+          filterIcon ?? AppImages.filterIcon,
           colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
         ),
       ),
