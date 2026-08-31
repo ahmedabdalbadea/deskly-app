@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widget/nearby_workspace_app_bar.dart';
 import 'widget/nearby_workspace_view_body.dart';
 
 class NearbyWorkspaceView extends StatelessWidget {
@@ -8,7 +9,7 @@ class NearbyWorkspaceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Nearby Workspaces')),
+      appBar: const NearbyWorkSpaceAppBar(),
       body: const NearbyWorkspaceViewBody(),
     );
   }
