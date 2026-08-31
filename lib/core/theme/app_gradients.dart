@@ -20,4 +20,10 @@ abstract final class AppGradients {
     end: Alignment.bottomRight,
     colors: [Color(0xFFFF6B8A), Color(0xFFFF4D6D)],
   );
+
+  static const imageOverlay = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0x1A000000), Color(0x8C000000)],
+  );
 }

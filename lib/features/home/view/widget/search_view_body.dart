@@ -1,8 +1,9 @@
-import 'package:deskly_app/features/home/view/widget/trending.dart';
 import 'package:flutter/material.dart';
 
+import 'browse_by_type.dart';
 import 'recent_search.dart';
 import 'search_app_bar.dart';
+import 'trending.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -34,6 +35,15 @@ class SearchViewBody extends StatelessWidget {
             child: Trending(),
           ),
         ),
+
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 24, right: 24, top: 16),
+            child: BrowseByType(),
+          ),
+        ),
+
+        const SliverToBoxAdapter(child: SizedBox(height: 24)),
       ],
     );
   }

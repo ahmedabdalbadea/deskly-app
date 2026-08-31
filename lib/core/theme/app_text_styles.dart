@@ -9,7 +9,6 @@ abstract class AppTextStyles {
   static TextStyle regular14(BuildContext context) =>
       TextStyle(fontSize: getResponsiveText(context, fontSize: 14));
 
-      
   static TextStyle regular16(BuildContext context) =>
       TextStyle(fontSize: getResponsiveText(context, fontSize: 16));
 
@@ -85,6 +84,11 @@ abstract class AppTextStyles {
 
   static TextStyle bold12(BuildContext context) => TextStyle(
     fontSize: getResponsiveText(context, fontSize: 12),
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle bold13(BuildContext context) => TextStyle(
+    fontSize: getResponsiveText(context, fontSize: 13),
     fontWeight: FontWeight.w700,
   );
 }

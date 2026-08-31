@@ -17,14 +17,23 @@ abstract class AppImages {
   static const eyeIcon = "assets/images/eye.svg";
   static const eyeOffIcon = "assets/images/eye_off.svg";
   static const lightBulbIcon = "assets/images/lightbulb.svg";
+
   static const profileTest = "assets/images/profile.jpg";
+  static const workspaceTest = "assets/images/workspace.jpg";
+
   static const bellBadgeIcon = "assets/images/bell_badge.svg";
   static const bellNoBadgeIcon = "assets/images/bell_no_badge.svg";
   static const filterIcon = "assets/images/fliter_icon.svg";
   static const adjustmentsIcon = "assets/images/adjustments_icon.svg";
+
   static const hotDeskIcon = "assets/images/hot_desk.svg";
   static const meetingRoomIcon = "assets/images/meeting_room.svg";
   static const privateOfficeIcon = "assets/images/private_office.svg";
   static const eventSpaceIcon = "assets/images/event_space.svg";
-  static const workspaceTest = "assets/images/workspace.jpg";
+
+  // Workspace images
+  static const hotDeskImage = "assets/images/hot_desk.jpg";
+  static const meetingRoomImage = "assets/images/meeting_room.jpg";
+  static const privateOfficeImage = "assets/images/private_office.jpg";
+  static const eventSpaceImage = "assets/images/event_space.jpg";
 }
