@@ -3,6 +3,7 @@ import 'package:deskly_app/features/auth/view/forgot_password_view.dart';
 import 'package:deskly_app/features/auth/view/login_view.dart';
 import 'package:deskly_app/features/auth/view/register_view.dart';
 import 'package:deskly_app/features/home/view/home_view.dart';
+import 'package:deskly_app/features/home/view/nearby_workspace_view.dart';
 import 'package:deskly_app/features/home/view/popular_workspace_view.dart';
 import 'package:deskly_app/features/home/view/search_view.dart';
 import 'package:deskly_app/features/onboarding/view/onboarding_view.dart';
@@ -18,6 +19,7 @@ abstract class AppRouter {
   static const kHomeView = "/home_view";
   static const kSearchView = "/search_view";
   static const kPopularWorkspaceView = '/popular_workspace_view';
+  static const kNearbyWorkspacesView = '/nearby_workspaces_view';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -69,14 +71,21 @@ abstract class AppRouter {
       ),
 
       GoRoute(
+        path: kSearchView,
+        builder: (context, state) {
+          return const SearchView();
+        },
+      ),
+
+      GoRoute(
         path: kPopularWorkspaceView,
         builder: (context, state) => const PopularWorkspaceView(),
       ),
 
       GoRoute(
-        path: kSearchView,
+        path: kNearbyWorkspacesView,
         builder: (context, state) {
-          return const SearchView();
+          return const NearbyWorkspaceView();
         },
       ),
     ],
