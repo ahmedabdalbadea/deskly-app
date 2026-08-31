@@ -1,3 +1,4 @@
+import 'package:deskly_app/features/home/view/widget/filter_chips_list.dart';
 import 'package:flutter/material.dart';
 
 class NearbyWorkspaceViewBody extends StatelessWidget {
@@ -5,15 +6,16 @@ class NearbyWorkspaceViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: const [
-        Text(
-          'Nearby Workspaces',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.only(bottom: 8),
+          color: Colors.white,
+          alignment: Alignment.center,
+          child: const FilterChipsList(
+            chips: ['All', '< 0.5 km', '< 1 km', '< 2 km', '< 5 km'],
+          ),
         ),
-        SizedBox(height: 16),
-        Center(child: Text('Nearby workspaces will appear here')),
       ],
     );
   }
