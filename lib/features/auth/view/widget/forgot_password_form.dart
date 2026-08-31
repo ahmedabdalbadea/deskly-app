@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'gradient_button.dart';
+import '../../../../core/widget/gradient_button.dart';
 import 'user_input.dart';
 
 class ForgotPasswordForm extends StatefulWidget {

@@ -5,7 +5,7 @@ import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:deskly_app/core/utils/form_validators.dart';
 import 'package:deskly_app/core/widget/pressable.dart';
 import 'package:deskly_app/features/auth/manager/auth_cubit/auth_cubit.dart';
-import 'package:deskly_app/features/auth/view/widget/gradient_button.dart';
+import 'package:deskly_app/core/widget/gradient_button.dart';
 import 'package:deskly_app/features/auth/view/widget/user_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
