@@ -63,13 +63,7 @@ class ForgotPasswordView extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 12, top: 12),
-                        child: CustomBackButton(
-                          onPressed: isLoading
-                              ? null
-                              : () {
-                                  GoRouter.of(context).pop();
-                                },
-                        ),
+                        child: CustomBackButton(isActive: !isLoading),
                       ),
                     ),
                   ),

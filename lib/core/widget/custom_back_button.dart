@@ -1,23 +1,34 @@
 import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomBackButton extends StatelessWidget {
-  const CustomBackButton({super.key, this.onPressed});
-  final VoidCallback? onPressed;
+  const CustomBackButton({
+    super.key,
+    this.backgroundColor,
+    this.iconColor,
+    this.isActive = true,
+  });
+  final Color? backgroundColor, iconColor;
+  final bool isActive;
   @override
   Widget build(BuildContext context) {
     return IconButton(
       style: IconButton.styleFrom(
-        backgroundColor: AppColors.surface,
+        backgroundColor: backgroundColor ?? AppColors.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(12),
         ),
       ),
-      onPressed: onPressed,
+      onPressed: isActive
+          ? () {
+              context.pop();
+            }
+          : null,
       icon: Icon(
         size: 18,
         Icons.arrow_back_ios_new_rounded,
-        color: AppColors.primaryPurple,
+        color: iconColor ?? AppColors.primaryPurple,
       ),
     );
   }

@@ -7,14 +7,9 @@ import 'location_badge.dart';
 
 class NearbyWorkSpaceAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  final VoidCallback? onBackPressed;
   final VoidCallback? onLocationPressed;
 
-  const NearbyWorkSpaceAppBar({
-    super.key,
-    this.onBackPressed,
-    this.onLocationPressed,
-  });
+  const NearbyWorkSpaceAppBar({super.key, this.onLocationPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +19,7 @@ class NearbyWorkSpaceAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       title: Row(
         children: [
-          CustomBackButton(onPressed: onBackPressed),
+          CustomBackButton(),
           const SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

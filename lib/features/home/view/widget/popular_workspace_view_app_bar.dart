@@ -17,7 +17,7 @@ class PopularWorkSpaceAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       title: Row(
         children: [
-          CustomBackButton(onPressed: () {}),
+          CustomBackButton(),
           const SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
