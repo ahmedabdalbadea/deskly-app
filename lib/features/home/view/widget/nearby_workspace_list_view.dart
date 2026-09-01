@@ -1,4 +1,7 @@
+import 'package:deskly_app/core/utils/app_router.dart';
+import 'package:deskly_app/core/widget/pressable.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'popular_workspace_list_view_item.dart';
 
@@ -13,10 +16,16 @@ class NearbyWorkspaceListView extends StatelessWidget {
       itemCount: 6,
       separatorBuilder: (_, _) => const SizedBox(height: 16),
       itemBuilder: (context, index) {
-        return PopularWorkspaceListViewItem(
-          onBookPressed: () {
-            // Navigate to booking screen
+        return Pressable(
+          radius: 16,
+          onPressed: () {
+            context.push(AppRouter.kWorkspaceDetialsView);
           },
+          child: PopularWorkspaceListViewItem(
+            onBookPressed: () {
+              // Navigate to booking screen
+            },
+          ),
         );
       },
     );

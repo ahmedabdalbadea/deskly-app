@@ -1,4 +1,7 @@
+import 'package:deskly_app/core/utils/app_router.dart';
+import 'package:deskly_app/core/widget/pressable.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'nearby_workspace_item.dart';
 
@@ -13,7 +16,13 @@ class NearbyWorkspaceList extends StatelessWidget {
         3,
         (index) => Padding(
           padding: EdgeInsets.only(right: index == 2 ? 0 : 12),
-          child: const NearbyWorkspaceItem(),
+          child: Pressable(
+            radius: 16,
+            onPressed: () {
+              context.push(AppRouter.kWorkspaceDetialsView);
+            },
+            child: const NearbyWorkspaceItem(),
+          ),
         ),
       ),
     );

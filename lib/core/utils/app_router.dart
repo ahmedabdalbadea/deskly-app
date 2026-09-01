@@ -6,6 +6,7 @@ import 'package:deskly_app/features/home/view/home_view.dart';
 import 'package:deskly_app/features/home/view/nearby_workspace_view.dart';
 import 'package:deskly_app/features/home/view/popular_workspace_view.dart';
 import 'package:deskly_app/features/home/view/search_view.dart';
+import 'package:deskly_app/features/home/view/workspace_details_view.dart';
 import 'package:deskly_app/features/onboarding/view/onboarding_view.dart';
 import 'package:deskly_app/features/splash/view/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ abstract class AppRouter {
   static const kSearchView = "/search_view";
   static const kPopularWorkspaceView = '/popular_workspace_view';
   static const kNearbyWorkspacesView = '/nearby_workspaces_view';
+  static const kWorkspaceDetialsView = '/workspaces_detials_view';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -86,6 +88,13 @@ abstract class AppRouter {
         path: kNearbyWorkspacesView,
         builder: (context, state) {
           return const NearbyWorkspaceView();
+        },
+      ),
+
+      GoRoute(
+        path: kWorkspaceDetialsView,
+        builder: (context, state) {
+          return const WorkspaceDetailsView();
         },
       ),
     ],
