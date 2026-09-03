@@ -7,9 +7,8 @@ class WorkspaceDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Workspace Details')),
-      body: const WorkspaceDetailsBody(),
+    return const Scaffold(
+      body: SafeArea(top: false, child: WorkspaceDetailsBody()),
     );
   }
 }
