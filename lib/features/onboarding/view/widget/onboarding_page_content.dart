@@ -1,4 +1,5 @@
 import 'package:deskly_app/constants.dart';
+import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
 import 'package:deskly_app/features/onboarding/data/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class _OnboardingPageContentState extends State<OnboardingPageContent> {
               widget.item.description,
               style: AppTextStyles.regular15(
                 context,
-              ).copyWith(color: const Color(0xff6E6E8A)),
+              ).copyWith(color: AppColors.mutedText),
             ),
           ),
         ),

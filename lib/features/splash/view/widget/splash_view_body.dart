@@ -1,3 +1,4 @@
+import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_gradients.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
 import 'package:deskly_app/core/utils/app_router.dart';
@@ -69,7 +70,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             "Your workspace, on demand",
             style: AppTextStyles.regular14(
               context,
-            ).copyWith(color: const Color(0xff6E6E8A)),
+            ).copyWith(color: AppColors.mutedText),
           ),
         ),
 

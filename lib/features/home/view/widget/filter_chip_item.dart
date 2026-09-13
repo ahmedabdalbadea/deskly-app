@@ -21,7 +21,7 @@ class FilterChipItem extends StatelessWidget {
         filter,
         style: AppTextStyles.semiBold12(
           context,
-        ).copyWith(color: active ? Colors.white : const Color(0xff6E6E8A)),
+        ).copyWith(color: active ? Colors.white : AppColors.mutedText),
       ),
     );
   }
