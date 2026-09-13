@@ -76,6 +76,9 @@ class WorkspaceDetailsContent extends StatelessWidget {
             context,
           ).copyWith(color: AppColors.mutedText, height: 1.6),
         ),
+        const SizedBox(height: 22),
+        const WorkspaceAmenities(),
+        const SizedBox(height: 22),
       ],
     );
   }
