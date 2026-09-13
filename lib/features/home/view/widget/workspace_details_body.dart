@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'workspace_details_content.dart';
 import 'workspace_header_delegate.dart';
 
 class WorkspaceDetailsBody extends StatelessWidget {
@@ -12,6 +13,10 @@ class WorkspaceDetailsBody extends StatelessWidget {
         SliverPersistentHeader(
           pinned: true,
           delegate: WorkspaceHeaderDelegate(),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
+          sliver: SliverToBoxAdapter(child: WorkspaceDetailsContent()),
         ),
       ],
     );
