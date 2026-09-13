@@ -81,6 +81,7 @@ class WorkspaceDetailsContent extends StatelessWidget {
         const SizedBox(height: 22),
         const WorkspaceGallery(),
         const SizedBox(height: 22),
+        const AvailableTimes(),
       ],
     );
   }
