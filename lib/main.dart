@@ -1,3 +1,4 @@
+import 'package:deskly_app/core/cache/init_hive.dart';
 import 'package:deskly_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await initHive();
   await setupServiceLocator();
   runApp(const DesklyApp());
 }
