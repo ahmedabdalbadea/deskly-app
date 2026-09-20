@@ -51,6 +51,8 @@ dependencies:
   hive_ce: ^2.20.0
   hive_ce_flutter: ^2.3.4
   geolocator: ^14.0.3
+  latlong2: ^0.10.1
+  geocoding: ^5.0.0
   
 
 dev_dependencies:
