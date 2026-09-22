@@ -7,7 +7,7 @@ class WorkspaceAmenitiesWrap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<({IconData icon, String label})> amenities = const [
+    const List<({IconData icon, String label})> amenities = [
       (icon: Icons.lock_outline_rounded, label: 'Secure Access'),
       (icon: Icons.coffee_outlined, label: 'Coffee Bar'),
       (icon: Icons.wifi_rounded, label: 'Fiber WiFi'),

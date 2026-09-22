@@ -11,7 +11,7 @@ class LoginHeader extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 16, bottom: 28),
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: AppGradients.primary,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(36),
@@ -25,7 +25,7 @@ class LoginHeader extends StatelessWidget {
         right: false,
         child: Column(
           children: [
-            DesklyLogo(size: 60, radius: 18, backgroundColor: Colors.white30),
+            const DesklyLogo(size: 60, radius: 18, backgroundColor: Colors.white30),
             const SizedBox(height: 12),
             Text(
               "Welcome Back",

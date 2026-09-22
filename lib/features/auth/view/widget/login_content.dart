@@ -19,7 +19,7 @@ class LoginContent extends StatelessWidget {
           children: [
             const SizedBox(height: 28),
 
-            LoginForm()
+            const LoginForm()
                 .animate(delay: 600.ms)
                 .fadeIn(duration: kAnimationDuration)
                 .slideY(
@@ -31,18 +31,18 @@ class LoginContent extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            OrDivider(),
+            const OrDivider(),
 
             const SizedBox(height: 24),
 
-            SocialAuthList()
+            const SocialAuthList()
                 .animate(delay: 800.ms)
                 .fadeIn(duration: kAnimationDuration)
                 .slideY(begin: 0.1, end: 0, duration: kAnimationDuration),
 
             const SizedBox(height: 24),
 
-            LoginNavigation(),
+            const LoginNavigation(),
 
             const SizedBox(height: 28),
           ],

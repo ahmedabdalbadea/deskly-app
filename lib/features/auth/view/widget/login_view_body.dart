@@ -12,7 +12,7 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        LoginHeader()
+        const LoginHeader()
             .animate(delay: 600.ms)
             .fadeIn(duration: kAnimationDuration)
             .slideY(
@@ -21,7 +21,7 @@ class LoginViewBody extends StatelessWidget {
               duration: kAnimationDuration,
               curve: Curves.easeOut,
             ),
-        Expanded(child: LoginContent()),
+        const Expanded(child: LoginContent()),
       ],
     );
   }

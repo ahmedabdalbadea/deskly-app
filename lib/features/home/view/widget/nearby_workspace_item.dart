@@ -26,7 +26,7 @@ class NearbyWorkspaceItem extends StatelessWidget {
           children: [
             Image.asset(AppImages.workspaceTest, fit: BoxFit.fill, height: 90),
 
-            NearbyWorkspaceItemDetails(),
+            const NearbyWorkspaceItemDetails(),
           ],
         ),
       ),

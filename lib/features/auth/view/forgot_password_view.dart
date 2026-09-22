@@ -7,7 +7,6 @@ import 'package:deskly_app/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:deskly_app/features/auth/view/widget/forgot_password_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../core/widget/custom_back_button.dart';
 

@@ -20,7 +20,7 @@ class _BlurBlobState extends State<BlurBlob> {
   void initState() {
     super.initState();
 
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         appear = true;
       });

@@ -32,7 +32,7 @@ class AnimatedFilterChips extends StatelessWidget {
                   width: double.infinity,
                   color: Colors.white,
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: FilterChipsList(
+                  child: const FilterChipsList(
                     chips: ['Top Rated', 'Lowest Price', 'Most Reviewed'],
                   ),
                 )

@@ -13,9 +13,9 @@ class LocationRepoImpl implements LocationRepo {
   Future<Either<Failure, LocationEntity>> fetchCurrentLocation() async {
     try {
       Position position = await Geolocator.getCurrentPosition(
-        locationSettings: LocationSettings(
+        locationSettings: const LocationSettings(
           accuracy: LocationAccuracy.high,
-          timeLimit: const Duration(seconds: 10),
+          timeLimit: Duration(seconds: 10),
         ),
       );
       return right(

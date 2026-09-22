@@ -13,7 +13,7 @@ class WorkspaceAmenities extends StatelessWidget {
       children: [
         Text('Amenities', style: AppTextStyles.bold15(context)),
         const SizedBox(height: 12),
-        WorkspaceAmenitiesWrap(),
+        const WorkspaceAmenitiesWrap(),
       ],
     );
   }

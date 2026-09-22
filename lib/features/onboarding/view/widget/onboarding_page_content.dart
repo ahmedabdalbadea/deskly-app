@@ -75,14 +75,14 @@ class _OnboardingPageContentState extends State<OnboardingPageContent> {
     Future.delayed(const Duration(milliseconds: 400), () {
       setState(() {
         _titleOpacity = 1;
-        _titleOffset = Offset(0, 0);
+        _titleOffset = const Offset(0, 0);
       });
     });
 
     Future.delayed(const Duration(milliseconds: 800), () {
       setState(() {
         _descriptionOpacity = 1;
-        _descriptionOffset = Offset(0, 0);
+        _descriptionOffset = const Offset(0, 0);
       });
     });
   }

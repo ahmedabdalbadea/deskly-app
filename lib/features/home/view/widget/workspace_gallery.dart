@@ -9,7 +9,7 @@ class WorkspaceGallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final images = const [
+    const images = [
       AppImages.hotDeskImage,
       AppImages.meetingRoomImage,
       AppImages.privateOfficeImage,
@@ -20,7 +20,7 @@ class WorkspaceGallery extends StatelessWidget {
       children: [
         Text('Gallery', style: AppTextStyles.bold15(context)),
         const SizedBox(height: 12),
-        SizedBox(height: 65, child: WorkspaceGalleryList(images: images)),
+        const SizedBox(height: 65, child: WorkspaceGalleryList(images: images)),
       ],
     );
   }

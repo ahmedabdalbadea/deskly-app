@@ -36,7 +36,7 @@ class RegisterViewBody extends StatelessWidget {
               ).copyWith(color: AppColors.mutedPurple),
             ).animate(delay: 260.ms).fadeIn(duration: kAnimationDuration),
             const SizedBox(height: 24),
-            RegisterForm()
+            const RegisterForm()
                 .animate(delay: 320.ms)
                 .fadeIn(duration: kAnimationDuration)
                 .slideY(
@@ -46,7 +46,7 @@ class RegisterViewBody extends StatelessWidget {
                   curve: Curves.easeOutCubic,
                 ),
             const SizedBox(height: 12),
-            RegisterNavigation(),
+            const RegisterNavigation(),
             const SizedBox(height: 24),
           ],
         ),

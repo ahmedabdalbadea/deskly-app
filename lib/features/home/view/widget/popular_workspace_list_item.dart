@@ -28,13 +28,13 @@ class PopularWorkspaceListItem extends StatelessWidget {
               ),
             ],
           ),
-          child: Row(
+          child: const Row(
             children: [
               PopularWorkspaceListItemImage(image: AppImages.workspaceTest),
-              const SizedBox(width: 10),
+              SizedBox(width: 10),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 8, bottom: 8),
+                  padding: EdgeInsets.only(right: 8, bottom: 8),
                   child: PopularWorkspaceListItemDetails(),
                 ),
               ),

@@ -8,7 +8,7 @@ class PopularWorkspaceListItemImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(
+      borderRadius: const BorderRadius.only(
         bottomLeft: Radius.circular(12),
         topLeft: Radius.circular(12),
       ),
@@ -30,7 +30,7 @@ class PopularWorkspaceListItemImage extends StatelessWidget {
                 color: Colors.black.withValues(alpha: 0.55),
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Text("🔥"),
+              child: const Text("🔥"),
             ),
           ),
         ],

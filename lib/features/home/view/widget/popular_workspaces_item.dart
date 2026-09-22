@@ -24,7 +24,7 @@ class PopularWorkspacesItem extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(AppImages.workspaceTest, fit: BoxFit.fill, height: 150, width: double.infinity,),
-            PopularWorkspacesItemDetails(),
+            const PopularWorkspacesItemDetails(),
           ],
         ),
       ),

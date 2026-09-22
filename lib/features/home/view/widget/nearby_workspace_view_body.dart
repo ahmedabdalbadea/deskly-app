@@ -11,7 +11,7 @@ class NearbyWorkspaceViewBody extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.only(bottom: 8),
+          padding: const EdgeInsets.only(bottom: 8),
           color: Colors.white,
           alignment: Alignment.center,
           child: const FilterChipsList(
@@ -19,9 +19,9 @@ class NearbyWorkspaceViewBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        Expanded(
+        const Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: EdgeInsets.symmetric(horizontal: 24.0),
             child: NearbyWorkspaceListView(),
           ),
         ),

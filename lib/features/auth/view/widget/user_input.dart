@@ -48,8 +48,8 @@ class _UserInputState extends State<UserInput> {
           child: SvgPicture.asset(widget.prefixIcon),
         ),
         suffixIcon: _buildSuffixIcon(),
-        suffixIconConstraints: BoxConstraints(maxWidth: 52, maxHeight: 52),
-        prefixIconConstraints: BoxConstraints(maxWidth: 48, maxHeight: 48),
+        suffixIconConstraints: const BoxConstraints(maxWidth: 52, maxHeight: 52),
+        prefixIconConstraints: const BoxConstraints(maxWidth: 48, maxHeight: 48),
         border: _buildBorder(color: AppColors.border),
         enabledBorder: _buildBorder(color: AppColors.border),
         focusedBorder: _buildBorder(color: AppColors.primaryPurple),
@@ -79,9 +79,9 @@ class _UserInputState extends State<UserInput> {
                   );
                 },
                 child: _hidePassword
-                    ? SvgPicture.asset(key: ValueKey("eye"), AppImages.eyeIcon)
+                    ? SvgPicture.asset(key: const ValueKey("eye"), AppImages.eyeIcon)
                     : SvgPicture.asset(
-                        key: ValueKey("eye_off"),
+                        key: const ValueKey("eye_off"),
                         AppImages.eyeOffIcon,
                       ),
               ),

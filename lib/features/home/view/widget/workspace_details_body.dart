@@ -14,8 +14,8 @@ class WorkspaceDetailsBody extends StatelessWidget {
           pinned: true,
           delegate: WorkspaceHeaderDelegate(),
         ),
-        SliverPadding(
-          padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
+        const SliverPadding(
+          padding: EdgeInsets.fromLTRB(20, 18, 20, 20),
           sliver: SliverToBoxAdapter(child: WorkspaceDetailsContent()),
         ),
       ],

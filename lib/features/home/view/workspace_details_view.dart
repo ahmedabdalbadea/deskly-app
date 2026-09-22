@@ -8,10 +8,10 @@ class WorkspaceDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const SafeArea(top: false, child: WorkspaceDetailsBody()),
+    return const Scaffold(
+      body: SafeArea(top: false, child: WorkspaceDetailsBody()),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 24),
+        padding: EdgeInsets.only(left: 20, right: 20, bottom: 24),
         child: SizedBox(
           height: 60,
           child: GradientButton(

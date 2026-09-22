@@ -19,7 +19,7 @@ class NearbyWorkSpaceAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       title: Row(
         children: [
-          CustomBackButton(),
+          const CustomBackButton(),
           const SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

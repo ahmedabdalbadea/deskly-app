@@ -10,22 +10,22 @@ class BlobBackground extends StatelessWidget {
       children: [
         Container(color: const Color(0xFFF6F7FE)),
 
-        Positioned(
+        const Positioned(
           top: -120,
           right: -120,
-          child: BlurBlob(color: const Color(0xFFCFE3FF), size: 270),
+          child: BlurBlob(color: Color(0xFFCFE3FF), size: 270),
         ),
 
         Positioned(
           left: -140,
           top: MediaQuery.sizeOf(context).height * .5 - 270 / 2,
-          child: BlurBlob(color: const Color(0xFFD7E6FF), size: 270),
+          child: const BlurBlob(color: Color(0xFFD7E6FF), size: 270),
         ),
 
-        Positioned(
+        const Positioned(
           left: -120,
           bottom: -120,
-          child: BlurBlob(color: const Color(0xFFE7D9FF), size: 270),
+          child: BlurBlob(color: Color(0xFFE7D9FF), size: 270),
         ),
 
         child!,

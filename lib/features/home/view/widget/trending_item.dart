@@ -31,10 +31,10 @@ class TrendingItem extends StatelessWidget {
             ).copyWith(color: const Color(0xff4A4A6A)),
           ),
           const SizedBox(width: 4),
-          Icon(
+          const Icon(
             Icons.trending_up_rounded,
             size: 16,
-            color: const Color(0xffB0B0C8),
+            color: Color(0xffB0B0C8),
           ),
         ],
       ),

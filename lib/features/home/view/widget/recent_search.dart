@@ -22,8 +22,8 @@ class RecentSearch extends StatelessWidget {
       child: Column(
         children: List.generate(7, (index) {
           return index % 2 == 0
-              ? RecentSearchItem(label: "The Hub Cairo")
-              : Divider(thickness: 0, color: AppColors.surfaceLight, height: 1);
+              ? const RecentSearchItem(label: "The Hub Cairo")
+              : const Divider(thickness: 0, color: AppColors.surfaceLight, height: 1);
         }),
       ),
     );

@@ -8,9 +8,9 @@ class NearbyWorkspaceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const NearbyWorkSpaceAppBar(),
-      body: const NearbyWorkspaceViewBody(),
+    return const Scaffold(
+      appBar: NearbyWorkSpaceAppBar(),
+      body: NearbyWorkspaceViewBody(),
     );
   }
 }

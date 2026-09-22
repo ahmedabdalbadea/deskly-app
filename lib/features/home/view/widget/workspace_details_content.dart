@@ -26,12 +26,12 @@ class WorkspaceDetailsContent extends StatelessWidget {
                 const SizedBox(height: 6),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on_outlined,
                       size: 14,
                       color: AppColors.primaryPurple,
                     ),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Text(
                       '26 Street 37, Maadi, Cairo',
                       style: AppTextStyles.regular13(

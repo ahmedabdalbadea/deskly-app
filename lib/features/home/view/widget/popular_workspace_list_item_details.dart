@@ -66,8 +66,8 @@ class PopularWorkspaceListItemDetails extends StatelessWidget {
             ),
             const Spacer(),
             ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 75),
-              child: GradientButton(
+              constraints: const BoxConstraints(maxWidth: 75),
+              child: const GradientButton(
                 title: "Book",
                 radius: 10,
                 padding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),

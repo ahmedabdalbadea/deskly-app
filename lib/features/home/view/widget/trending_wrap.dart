@@ -10,8 +10,8 @@ class TrendingWrap extends StatelessWidget {
     return Wrap(
       spacing: 10,
       children: List.generate(6, (index) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 7.0),
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 7.0),
           child: TrendingItem(icon: "🖥️", label: "Hot Desk"),
         );
       }),

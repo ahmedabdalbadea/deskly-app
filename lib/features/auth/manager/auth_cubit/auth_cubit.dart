@@ -13,15 +13,11 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit({
-    required RegisterUseCase registerUseCase,
-    required LoginUseCase loginUseCase,
-    required SocialAuthUseCase socialAuthUseCase,
-    required ResetPasswordUseCase resetPasswordUseCase,
-  }) : _registerUseCase = registerUseCase,
-       _loginUseCase = loginUseCase,
-       _socialAuthUseCase = socialAuthUseCase,
-       _resetPasswordUseCase = resetPasswordUseCase,
-       super(AuthInitial());
+    required this._registerUseCase,
+    required this._loginUseCase,
+    required this._socialAuthUseCase,
+    required this._resetPasswordUseCase,
+  }) : super(AuthInitial());
 
   final RegisterUseCase _registerUseCase;
   final LoginUseCase _loginUseCase;

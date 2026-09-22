@@ -38,7 +38,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       children: [
         AnimatedSlide(
           duration: kAnimationDuration,
-          offset: _logoSlideAnimation ? Offset(0, 0) : Offset(0, 0.6),
+          offset: _logoSlideAnimation ? const Offset(0, 0) : const Offset(0, 0.6),
           child: AnimatedOpacity(
             opacity: _logoOpacityAnimation ? 1 : 0,
             duration: kAnimationDuration,
@@ -79,38 +79,38 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         AnimatedOpacity(
           opacity: _indicatorsAnimation ? 1 : 0,
           duration: kAnimationDuration,
-          child: DotIndicatorsList(),
+          child: const DotIndicatorsList(),
         ),
       ],
     );
   }
 
   void _forwardSequentialAnimation() {
-    Future.delayed(Duration(milliseconds: 2000), () {
+    Future.delayed(const Duration(milliseconds: 2000), () {
       setState(() {
         _logoOpacityAnimation = true;
       });
     });
 
-    Future.delayed(Duration(milliseconds: 2640), () {
+    Future.delayed(const Duration(milliseconds: 2640), () {
       setState(() {
         _logoSlideAnimation = true;
       });
     });
 
-    Future.delayed(Duration(milliseconds: 3280), () {
+    Future.delayed(const Duration(milliseconds: 3280), () {
       setState(() {
         _titleAnimation = true;
       });
     });
 
-    Future.delayed(Duration(milliseconds: 3600), () {
+    Future.delayed(const Duration(milliseconds: 3600), () {
       setState(() {
         _taglineAnimation = true;
       });
     });
 
-    Future.delayed(Duration(milliseconds: 3920), () {
+    Future.delayed(const Duration(milliseconds: 3920), () {
       setState(() {
         _indicatorsAnimation = true;
       });

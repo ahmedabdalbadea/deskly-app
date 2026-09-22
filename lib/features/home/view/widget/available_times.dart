@@ -13,7 +13,7 @@ class AvailableTimes extends StatelessWidget {
       children: [
         Text('Available Today', style: AppTextStyles.bold15(context)),
         const SizedBox(height: 12),
-        AvailableTimesWarp(),
+        const AvailableTimesWarp(),
       ],
     );
   }

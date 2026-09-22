@@ -24,7 +24,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
             children: [
               const SizedBox(height: 24),
 
-              ForgotPasswordIcon()
+              const ForgotPasswordIcon()
                   .animate(delay: 200.ms)
                   .fadeIn(duration: kAnimationDuration)
                   .slideY(
@@ -50,7 +50,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
                   ),
 
               Padding(
-                padding: EdgeInsetsGeometry.symmetric(horizontal: 24),
+                padding: const EdgeInsetsGeometry.symmetric(horizontal: 24),
                 child:
                     Text(
                           "Don't worry! Enter your email and we'll send you a reset link.",
@@ -71,7 +71,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              ForgotPasswordForm(),
+              const ForgotPasswordForm(),
 
               const SizedBox(height: 16),
 
@@ -86,7 +86,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
                     ),
 
                     child: ListTile(
-                      contentPadding: EdgeInsets.all(0),
+                      contentPadding: const EdgeInsets.all(0),
                       leading: SvgPicture.asset(AppImages.lightBulbIcon),
                       title: Text(
                         "Check your inbox",
@@ -113,7 +113,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              ForgotPasswordNavigation()
+              const ForgotPasswordNavigation()
                   .animate(delay: 500.ms)
                   .fadeIn(duration: kAnimationDuration)
                   .slideY(

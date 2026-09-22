@@ -20,7 +20,7 @@ class OnboardingNavigation extends StatelessWidget {
     return Row(
       children: [
         PageIndicatorsList(activePage: pageIndex),
-        Spacer(),
+        const Spacer(),
 
         AnimatedSwitcher(
           duration: kAnimationDuration,

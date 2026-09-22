@@ -24,7 +24,7 @@ class HomeAppBar extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               const UserGreeting(greeting: 'Good morning,', userName: 'Ahmed'),
               const Spacer(),
               NotificationButton(onPressed: () {}),

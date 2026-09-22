@@ -12,7 +12,7 @@ class WorkspaceHeader extends StatelessWidget {
     return Container(
       height: 275,
       padding: const EdgeInsets.only(left: 24, right: 24, bottom: 18),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(AppImages.workspaceTest),
           fit: BoxFit.fill,

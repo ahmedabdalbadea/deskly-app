@@ -14,7 +14,7 @@ class WorkspaceHeaderDelegate extends SliverPersistentHeaderDelegate {
     BuildContext context,
     double shrinkOffset,
     bool overlapsContent,
-  ) => WorkspaceHeader();
+  ) => const WorkspaceHeader();
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>

@@ -36,14 +36,14 @@ class _OnboardingHeroCardState extends State<OnboardingHeroCard> {
             duration: kAnimationDuration,
             top: _circleAvatarPosition,
             right: _circleAvatarPosition,
-            child: CircleAvatar(backgroundColor: Colors.white12, radius: 80),
+            child: const CircleAvatar(backgroundColor: Colors.white12, radius: 80),
           ),
 
           AnimatedPositioned(
             duration: kAnimationDuration,
             left: _circleAvatarPosition,
             bottom: _circleAvatarPosition,
-            child: CircleAvatar(backgroundColor: Colors.white12, radius: 80),
+            child: const CircleAvatar(backgroundColor: Colors.white12, radius: 80),
           ),
           AnimatedScale(
             duration: kAnimationDuration,

@@ -12,7 +12,7 @@ class WorkspaceServices extends StatelessWidget {
         services.length,
         (index) => Container(
           margin: EdgeInsets.only(right: index < services.length - 1 ? 4 : 0),
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: AppColors.surfaceLight,
             borderRadius: BorderRadius.circular(6),

@@ -33,7 +33,7 @@ class GradientCheckBox extends StatelessWidget {
           gradient: value ? AppGradients.primary : null,
         ),
 
-        child: value ? Icon(Icons.check, size: 14, color: Colors.white) : null,
+        child: value ? const Icon(Icons.check, size: 14, color: Colors.white) : null,
       ),
     );
   }

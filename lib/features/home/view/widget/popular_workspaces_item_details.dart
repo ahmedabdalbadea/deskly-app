@@ -32,7 +32,7 @@ class PopularWorkspacesItemDetails extends StatelessWidget {
 
           Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.location_on_outlined,
                 size: 14,
                 color: AppColors.mutedPurple,
@@ -52,7 +52,7 @@ class PopularWorkspacesItemDetails extends StatelessWidget {
                 ).copyWith(color: AppColors.mutedPurple),
               ),
               const SizedBox(width: 5),
-              Icon(Icons.star, size: 14, color: const Color(0xffFBBF24)),
+              const Icon(Icons.star, size: 14, color: Color(0xffFBBF24)),
               const SizedBox(width: 5),
               Text("4.8", style: AppTextStyles.semiBold12(context)),
               const SizedBox(width: 5),

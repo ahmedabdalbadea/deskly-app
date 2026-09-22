@@ -12,9 +12,9 @@ class PopularWorkspaceViewBody extends StatelessWidget {
       children: [
         AnimatedFilterChips(showChips: showChips),
         const SizedBox(height: 16),
-        Expanded(
+        const Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: EdgeInsets.symmetric(horizontal: 24),
             child: PopularWorkspaceListView(),
           ),
         ),
