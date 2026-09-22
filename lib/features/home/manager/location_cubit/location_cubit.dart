@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:deskly_app/features/home/domain/entity/location_entity.dart';
 import 'package:deskly_app/features/home/domain/use%20case/fetch_current_location_use_case.dart';
 import 'package:meta/meta.dart';
 part 'location_state.dart';
@@ -7,6 +8,7 @@ class LocationCubit extends Cubit<LocationState> {
   LocationCubit({required this._fetchCurrentLocationUseCase})
     : super(LocationInitial());
   final FetchCurrentLocationUseCase _fetchCurrentLocationUseCase;
+  LocationEntity? currentLocation; 
   Future<void> checkLocationReadiness() async {
     emit(LocationChecking());
 
@@ -16,7 +18,8 @@ class LocationCubit extends Cubit<LocationState> {
       (failure) {
         emit(LocationNotReady(failure.message));
       },
-      (_) {
+      (location) {
+        currentLocation = location;
         emit(LocationReady());
       },
     );
