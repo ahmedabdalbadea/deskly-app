@@ -1,13 +1,15 @@
-import 'package:deskly_app/core/utils/app_images.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:deskly_app/features/home/domain/entity/workspace_entity.dart';
 import 'package:flutter/material.dart';
 
 import 'popular_workspaces_item_details.dart';
 
 class PopularWorkspacesItem extends StatelessWidget {
-  const PopularWorkspacesItem({super.key});
-
+  const PopularWorkspacesItem({super.key, required this.workspace});
+  final WorkspaceEntity workspace;
   @override
   Widget build(BuildContext context) {
+    
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Container(
@@ -23,8 +25,13 @@ class PopularWorkspacesItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image.asset(AppImages.workspaceTest, fit: BoxFit.fill, height: 150, width: double.infinity,),
-            const PopularWorkspacesItemDetails(),
+            CachedNetworkImage(
+              imageUrl: workspace.images[0],
+              fit: BoxFit.fill,
+              height: 150,
+              width: double.infinity,
+            ),
+            PopularWorkspacesItemDetails(workspace: workspace),
           ],
         ),
       ),

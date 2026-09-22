@@ -1,9 +1,9 @@
+import 'package:deskly_app/features/home/view/widget/popular_workspaces_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 import 'categories.dart';
 import 'home_app_bar.dart';
 import 'nearby_workspace.dart';
-import 'popular_workspaces.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: PopularWorkspaces(),
+            child: PopularWorkspacesBlocConsumer(),
           ),
         ),
 

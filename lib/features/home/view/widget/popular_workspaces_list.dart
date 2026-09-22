@@ -1,13 +1,14 @@
 import 'package:deskly_app/core/utils/app_router.dart';
 import 'package:deskly_app/core/widget/pressable.dart';
+import 'package:deskly_app/features/home/domain/entity/workspace_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'popular_workspaces_item.dart';
 
 class PopularWorkspacesList extends StatelessWidget {
-  const PopularWorkspacesList({super.key});
-
+  const PopularWorkspacesList({super.key, required this.workspaces});
+  final List<WorkspaceEntity> workspaces;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,7 +21,7 @@ class PopularWorkspacesList extends StatelessWidget {
             onPressed: () {
               context.push(AppRouter.kWorkspaceDetialsView);
             },
-            child: const PopularWorkspacesItem(),
+            child:  PopularWorkspacesItem(workspace: workspaces[index],),
           ),
         ),
       ),

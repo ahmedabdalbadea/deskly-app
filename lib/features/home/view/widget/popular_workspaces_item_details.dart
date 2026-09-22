@@ -1,10 +1,12 @@
 import 'package:deskly_app/core/theme/app_colors.dart';
 import 'package:deskly_app/core/theme/app_text_styles.dart';
+import 'package:deskly_app/features/home/domain/entity/workspace_entity.dart';
+import 'package:deskly_app/features/home/view/widget/address_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class PopularWorkspacesItemDetails extends StatelessWidget {
-  const PopularWorkspacesItemDetails({super.key});
-
+  const PopularWorkspacesItemDetails({super.key, required this.workspace});
+  final WorkspaceEntity workspace;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,16 +15,22 @@ class PopularWorkspacesItemDetails extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text("The Hub Cairo", style: AppTextStyles.bold15(context)),
+              Text(
+                workspace.name,
+                style: AppTextStyles.bold15(
+                  context,
+                ).copyWith(overflow: TextOverflow.ellipsis),
+                maxLines: 1,
+              ),
               const Spacer(),
               Text(
-                "EGP 80/",
+                "EGP ${workspace.price.toInt()}/",
                 style: AppTextStyles.bold15(
                   context,
                 ).copyWith(color: AppColors.primaryPurple),
               ),
               Text(
-                "hr",
+                workspace.priceUnit,
                 style: AppTextStyles.regular11(
                   context,
                 ).copyWith(color: AppColors.mutedText),
@@ -38,11 +46,9 @@ class PopularWorkspacesItemDetails extends StatelessWidget {
                 color: AppColors.mutedPurple,
               ),
               const SizedBox(width: 5),
-              Text(
-                "Cairo, Egypt",
-                style: AppTextStyles.regular12(
-                  context,
-                ).copyWith(color: AppColors.mutedPurple),
+              AddressBlocBuilder(
+                lat: workspace.latitude,
+                lng: workspace.longitude,
               ),
               const SizedBox(width: 5),
               Text(
@@ -54,10 +60,13 @@ class PopularWorkspacesItemDetails extends StatelessWidget {
               const SizedBox(width: 5),
               const Icon(Icons.star, size: 14, color: Color(0xffFBBF24)),
               const SizedBox(width: 5),
-              Text("4.8", style: AppTextStyles.semiBold12(context)),
+              Text(
+                workspace.rating.toStringAsFixed(1),
+                style: AppTextStyles.semiBold12(context),
+              ),
               const SizedBox(width: 5),
               Text(
-                "(124)",
+                "(${workspace.reviewsCount})",
                 style: AppTextStyles.regular12(
                   context,
                 ).copyWith(color: AppColors.mutedPurple),
