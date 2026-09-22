@@ -1,14 +1,18 @@
 import 'package:dartz/dartz.dart';
 import 'package:deskly_app/core/errors/failure.dart';
+import 'package:deskly_app/features/home/domain/entity/address_entity.dart';
 import 'package:deskly_app/features/home/domain/entity/location_entity.dart';
 import 'package:deskly_app/features/home/domain/enums/location_permission_status.dart';
-import 'package:deskly_app/features/home/domain/error/location_failure.dart';
+import 'package:deskly_app/features/home/data/errors/location_failure.dart';
 import 'package:deskly_app/features/home/domain/repos/location_repo.dart';
+import 'package:flutter/services.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 class LocationRepoImpl implements LocationRepo {
+  const LocationRepoImpl({required this._geocoding});
 
-  LocationRepoImpl();
+  final Geocoding _geocoding;
   @override
   Future<Either<Failure, LocationEntity>> fetchCurrentLocation() async {
     try {
@@ -25,11 +29,19 @@ class LocationRepoImpl implements LocationRepo {
         ),
       );
     } on PermissionDeniedException {
-      return left(LocationFailure(LocationPermissionStatus.denied));
+      return left(
+        LocationFailure.fromPermissionStatus(LocationPermissionStatus.denied),
+      );
     } on LocationServiceDisabledException {
-      return left(LocationFailure(LocationPermissionStatus.serviceDisabled));
+      return left(
+        LocationFailure.fromPermissionStatus(
+          LocationPermissionStatus.serviceDisabled,
+        ),
+      );
     } catch (_) {
-      return left(LocationFailure(LocationPermissionStatus.unknown));
+      return left(
+        LocationFailure.fromPermissionStatus(LocationPermissionStatus.unknown),
+      );
     }
   }
 
@@ -59,6 +71,32 @@ class LocationRepoImpl implements LocationRepo {
       case LocationPermission.denied:
       case LocationPermission.unableToDetermine:
         return LocationPermissionStatus.denied;
+    }
+  }
+
+  @override
+  Future<Either<Failure, AddressEntity>> fetchAddressFromLocation({
+    required double latitude,
+    required double longitude,
+  }) async {
+    try {
+      List<Placemark> placemarks = await _geocoding.placemarkFromCoordinates(
+        latitude,
+        longitude,
+      );
+      Placemark place = placemarks[0];
+      return right(
+        AddressEntity(
+          country: place.country ?? '',
+          administrativeArea: place.administrativeArea ?? '',
+          locality: place.locality ?? '',
+          street: place.street ?? '',
+        ),
+      );
+    } on PlatformException catch (e) {
+      return left(LocationFailure(e.message ?? 'fail to get location'));
+    } catch (e) {
+      return left(const LocationFailure('Unknown error'));
     }
   }
 }
