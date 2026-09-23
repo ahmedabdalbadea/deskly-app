@@ -1,3 +1,4 @@
+import 'package:deskly_app/features/home/view/widget/categories_consumer_builder.dart';
 import 'package:deskly_app/features/home/view/widget/popular_workspaces_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Categories(),
+            child: CategoriesConsumerBuilder(),
           ),
         ),
 

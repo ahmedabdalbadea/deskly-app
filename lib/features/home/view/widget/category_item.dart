@@ -47,7 +47,7 @@ class CategoryItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(icon, width: 28, height: 28),
+            Text(icon, style: AppTextStyles.regular20(context)),
             const SizedBox(height: 8),
             Text(
               label,
