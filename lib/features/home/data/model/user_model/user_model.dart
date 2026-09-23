@@ -10,7 +10,7 @@ class UserModel extends UserEntity {
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      id: json['id'] as String,
+      id: json['uId'] as String,
       name: json['name'] as String,
       imageProfile: json['imageProfile'] as String?,
     );
@@ -18,7 +18,7 @@ class UserModel extends UserEntity {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
+      'uId': id,
       'name': name,
       'imageProfile': imageProfile,
     };
