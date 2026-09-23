@@ -9,7 +9,6 @@ class PopularWorkspacesItem extends StatelessWidget {
   final WorkspaceEntity workspace;
   @override
   Widget build(BuildContext context) {
-    
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Container(
@@ -26,10 +25,20 @@ class PopularWorkspacesItem extends StatelessWidget {
         child: Column(
           children: [
             CachedNetworkImage(
-              imageUrl: workspace.images[0],
+              imageUrl: workspace.images.isEmpty ? "" : workspace.images[0],
               fit: BoxFit.fill,
               height: 150,
               width: double.infinity,
+              errorWidget: (context, url, error) => Container(
+                height: 150,
+                width: double.infinity,
+                color: Colors.grey.shade200,
+                child: Icon(
+                  Icons.business_outlined,
+                  size: 40,
+                  color: Colors.grey.shade400,
+                ),
+              ),
             ),
             PopularWorkspacesItemDetails(workspace: workspace),
           ],

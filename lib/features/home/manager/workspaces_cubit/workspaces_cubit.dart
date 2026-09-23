@@ -30,6 +30,4 @@ class WorkspacesCubit extends Cubit<WorkspacesState> {
       );
     });
   }
-
-  
 }

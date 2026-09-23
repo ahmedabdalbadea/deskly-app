@@ -2,9 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:deskly_app/core/errors/failure.dart';
 import 'package:deskly_app/core/use_case/use_case.dart';
 import 'package:deskly_app/features/home/domain/entity/address_entity.dart';
-import 'package:deskly_app/features/home/domain/entity/location_entity.dart';
 import 'package:deskly_app/features/home/domain/repos/location_repo.dart';
-
 class FetchAddressParams {
   final double latitude;
   final double longitude;

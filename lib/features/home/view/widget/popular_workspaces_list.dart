@@ -11,17 +11,18 @@ class PopularWorkspacesList extends StatelessWidget {
   final List<WorkspaceEntity> workspaces;
   @override
   Widget build(BuildContext context) {
+    final len = workspaces.take(2).length;
     return Column(
       children: List.generate(
-        2,
+        len,
         (index) => Padding(
-          padding: EdgeInsets.only(bottom: index == 1 ? 0 : 12),
+          padding: EdgeInsets.only(bottom: index == len - 1 ? 0 : 12),
           child: Pressable(
             radius: 16,
             onPressed: () {
               context.push(AppRouter.kWorkspaceDetialsView);
             },
-            child:  PopularWorkspacesItem(workspace: workspaces[index],),
+            child: PopularWorkspacesItem(workspace: workspaces[index]),
           ),
         ),
       ),
