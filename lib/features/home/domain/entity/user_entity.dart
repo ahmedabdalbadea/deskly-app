@@ -3,11 +3,5 @@ class UserEntity {
   final String name;
   final String? imageProfile;
 
-  const UserEntity({
-    required this.id,
-    required this.name,
-    this.imageProfile,
-  });
-
-  
+  const UserEntity({required this.id, required this.name, this.imageProfile});
 }
