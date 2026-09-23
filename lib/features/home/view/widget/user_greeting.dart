@@ -16,6 +16,7 @@ class UserGreeting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: .start,
       children: [
         Text(
           greeting,
@@ -24,18 +25,25 @@ class UserGreeting extends StatelessWidget {
           ).copyWith(color: AppColors.mutedText),
         ),
         const SizedBox(height: 2),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              userName,
-              style: AppTextStyles.semiBold20(
-                context,
-              ).copyWith(color: AppColors.primaryText),
-            ),
-            const SizedBox(width: 4),
-            const Text('👋', style: TextStyle(fontSize: 18)),
-          ],
+        ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 200),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(
+                child: Text(
+                  userName,
+                  style: AppTextStyles.semiBold20(context).copyWith(
+                    color: AppColors.primaryText,
+                    overflow: TextOverflow.fade,
+                  ),
+                  maxLines: 1,
+                ),
+              ),
+              const SizedBox(width: 4),
+              Text('👋', style: AppTextStyles.regular18(context)),
+            ],
+          ),
         ),
       ],
     );

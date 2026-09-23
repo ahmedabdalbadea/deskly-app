@@ -2,7 +2,6 @@ import 'package:deskly_app/features/home/view/widget/categories_consumer_builder
 import 'package:deskly_app/features/home/view/widget/popular_workspaces_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
-import 'categories.dart';
 import 'home_app_bar.dart';
 import 'nearby_workspace.dart';
 

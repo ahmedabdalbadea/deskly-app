@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'home_search_bar.dart';
-import 'notification_button.dart';
-import 'profile_avatar.dart';
-import 'user_greeting.dart';
+import 'user_greeting_bloc_builder.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -16,22 +14,13 @@ class HomeAppBar extends StatelessWidget {
       surfaceTintColor: Colors.transparent,
       backgroundColor: Colors.white,
 
-      title: SafeArea(
+      title: const SafeArea(
         left: false,
         bottom: false,
         right: false,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            children: [
-              const SizedBox(height: 8),
-              const UserGreeting(greeting: 'Good morning,', userName: 'Ahmed'),
-              const Spacer(),
-              NotificationButton(onPressed: () {}),
-              const SizedBox(width: 10),
-              ProfileAvatar(onPressed: () {}),
-            ],
-          ),
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: UserGreetingBlocBuilder(),
         ),
       ),
       bottom: PreferredSize(
