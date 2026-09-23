@@ -14,9 +14,11 @@ import 'package:deskly_app/features/home/data/repos/location_repo_impl.dart';
 import 'package:deskly_app/features/home/domain/repos/home_repo.dart';
 import 'package:deskly_app/features/home/domain/repos/location_repo.dart';
 import 'package:deskly_app/features/home/domain/use%20case/fetch_address_from_location.dart';
+import 'package:deskly_app/features/home/domain/use%20case/fetch_categories_use_case.dart';
 import 'package:deskly_app/features/home/domain/use%20case/fetch_current_location_use_case.dart';
 import 'package:deskly_app/features/home/domain/use%20case/fetch_popular_workspaces_use_case.dart';
 import 'package:deskly_app/features/home/manager/address_cubit/address_cubit.dart';
+import 'package:deskly_app/features/home/manager/categoires_cubit/categoires_cubit.dart';
 import 'package:deskly_app/features/home/manager/location_cubit/location_cubit.dart';
 import 'package:deskly_app/features/home/manager/workspaces_cubit/workspaces_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -95,6 +97,9 @@ Future<void> setupServiceLocator() async {
     () => FetchPopularWorkspacesUseCase(homeRepo: getIt()),
   );
   getIt.registerLazySingleton(
+    () => FetchCategoriesUseCase(homeRepo: getIt()),
+  );
+  getIt.registerLazySingleton(
     () => FetchAddressFromLocation(locationRepo: getIt()),
   );
 
@@ -104,6 +109,9 @@ Future<void> setupServiceLocator() async {
   );
   getIt.registerFactory(
     () => WorkspacesCubit(fetchPopularWorkspacesUseCase: getIt()),
+  );
+  getIt.registerFactory(
+    () => CategoiresCubit(fetchCategoriesUseCase: getIt()),
   );
   getIt.registerFactory(
     () => AddressCubit(fetchAddressUseCase: getIt()),

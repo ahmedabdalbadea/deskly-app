@@ -1,5 +1,6 @@
 import 'package:deskly_app/core/utils/service_locator.dart';
 import 'package:deskly_app/features/home/manager/address_cubit/address_cubit.dart';
+import 'package:deskly_app/features/home/manager/categoires_cubit/categoires_cubit.dart';
 import 'package:deskly_app/features/home/manager/location_cubit/location_cubit.dart';
 import 'package:deskly_app/features/home/manager/workspaces_cubit/workspaces_cubit.dart';
 import 'package:deskly_app/features/home/view/widget/home_view_body_bloc_builder.dart';
@@ -24,8 +25,10 @@ class HomeView extends StatelessWidget {
               create: (context) =>
                   getIt<WorkspacesCubit>()..fetchPopularWordspaces(),
             ),
+            BlocProvider(create: (context) => getIt<AddressCubit>()),
             BlocProvider(
-              create: (context) => getIt<AddressCubit>(),
+              create: (context) =>
+                  getIt<CategoiresCubit>()..fetchCategories(),
             ),
           ],
           child: const HomeViewBodyBlocBuilder(),
